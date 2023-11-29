@@ -27,7 +27,7 @@ class AuthEpics implements EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.createUser(email: action.email, password: action.password))
           .map((AppUser user) => CreateUser.successful(user))
-          .onErrorReturnWith((error, stackTrace) => CreateUser.error(error, stackTrace))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
           .doOnData(action.result);
     });
   }
@@ -37,7 +37,7 @@ class AuthEpics implements EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.loginUser(email: action.email, password: action.password))
           .map((AppUser user) => LoginUser.successful(user))
-          .onErrorReturnWith((error, stackTrace) => LoginUser.error(error,stackTrace))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginUser.error(error,stackTrace))
           .doOnData(action.result);
     });
   }
@@ -47,7 +47,7 @@ class AuthEpics implements EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.checkUser())
           .map((AppUser? user) => CheckUser.successful(user))
-          .onErrorReturnWith((error, stackTrace) => CheckUser.error(error, stackTrace));
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => CheckUser.error(error, stackTrace));
     });
   }
 
@@ -56,7 +56,7 @@ class AuthEpics implements EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.logOut())
           .mapTo(const LogOutUser.successful())
-          .onErrorReturnWith((error, stackTrace) => LogOutUser.error(error, stackTrace));
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => LogOutUser.error(error, stackTrace));
     });
   }
 }

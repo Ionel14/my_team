@@ -1,4 +1,4 @@
-part of "../index.dart";
+part of '../index.dart';
 
 const String _kCreateUserPendingId = 'CreateUser';
 

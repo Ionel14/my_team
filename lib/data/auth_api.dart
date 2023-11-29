@@ -7,8 +7,8 @@ class AuthApi {
   final FirebaseAuth _auth;
 
   Future<AppUser> createUser({required String email, required String password}) async {
-      final userCredentials = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      final user = userCredentials.user!;
+      final UserCredential userCredentials = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      final User user = userCredentials.user!;
 
       return AppUser(
           uid: user.uid,
@@ -18,8 +18,8 @@ class AuthApi {
   }
 
   Future<AppUser> loginUser({required String email, required String password}) async {
-      final userCredentials = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      final user = userCredentials.user!;
+      final UserCredential userCredentials = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      final User user = userCredentials.user!;
 
       return AppUser(
           uid: user.uid,
