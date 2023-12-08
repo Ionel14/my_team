@@ -1,9 +1,13 @@
-import '../models/index.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../models/index.dart';
+
+part 'announcements/store_user_info.dart';
+part 'announcements/list_category.dart';
+part 'announcements/list_announcements.dart';
+part 'auth/check_user.dart';
 part 'auth/create_user.dart';
 part 'auth/login_user.dart';
-part 'auth/check_user.dart';
 part 'auth/logout_user.dart';
 part 'index.freezed.dart';
 

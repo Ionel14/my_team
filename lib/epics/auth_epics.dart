@@ -1,10 +1,9 @@
-import 'package:my_team/actions/index.dart';
 import 'package:redux_epics/redux_epics.dart';
-
-import 'package:my_team/models/index.dart';
 import 'package:rxdart/transformers.dart';
 
+import '../actions/index.dart';
 import '../data/auth_api.dart';
+import '../models/index.dart';
 
 class AuthEpics implements EpicClass<AppState> {
   AuthEpics(this._api);
@@ -12,7 +11,7 @@ class AuthEpics implements EpicClass<AppState> {
   final AuthApi _api;
 
   @override
-  Stream call(Stream actions, EpicStore<AppState> store) {
+  Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
       TypedEpic<AppState, CreateUserStart>(_createUserStart).call,
       TypedEpic<AppState, LoginUserStart>(_loginUserStart).call,
@@ -26,7 +25,12 @@ class AuthEpics implements EpicClass<AppState> {
     return actions.flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.createUser(email: action.email, password: action.password))
-          .map((AppUser user) => CreateUser.successful(user))
+          .expand((AppUser user) {
+            return <dynamic>[
+              CreateUser.successful(user),
+              StoreUserInfo(newUser: user),
+            ];
+          })
           .onErrorReturnWith((Object error, StackTrace stackTrace) => CreateUser.error(error, stackTrace))
           .doOnData(action.result);
     });

@@ -8,4 +8,4 @@ class CheckUser with _$CheckUser {
   const factory CheckUser.successful(AppUser? user) = CheckUserSuccessful;
 
   const factory CheckUser.error(Object error, StackTrace stackTrace) = CheckUserError;
-  }
+}

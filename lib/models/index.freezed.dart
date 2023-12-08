@@ -14,6 +14,671 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+AnnouncementsState _$AnnouncementsStateFromJson(Map<String, dynamic> json) {
+  return AnnouncementsState$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AnnouncementsState {
+  List<Announcement> get announcements => throw _privateConstructorUsedError;
+  List<Category> get categories => throw _privateConstructorUsedError;
+  List<AppUser> get users => throw _privateConstructorUsedError;
+  String? get selectedCategoryId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AnnouncementsStateCopyWith<AnnouncementsState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnnouncementsStateCopyWith<$Res> {
+  factory $AnnouncementsStateCopyWith(
+          AnnouncementsState value, $Res Function(AnnouncementsState) then) =
+      _$AnnouncementsStateCopyWithImpl<$Res, AnnouncementsState>;
+  @useResult
+  $Res call(
+      {List<Announcement> announcements,
+      List<Category> categories,
+      List<AppUser> users,
+      String? selectedCategoryId});
+}
+
+/// @nodoc
+class _$AnnouncementsStateCopyWithImpl<$Res, $Val extends AnnouncementsState>
+    implements $AnnouncementsStateCopyWith<$Res> {
+  _$AnnouncementsStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? announcements = null,
+    Object? categories = null,
+    Object? users = null,
+    Object? selectedCategoryId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      announcements: null == announcements
+          ? _value.announcements
+          : announcements // ignore: cast_nullable_to_non_nullable
+              as List<Announcement>,
+      categories: null == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<AppUser>,
+      selectedCategoryId: freezed == selectedCategoryId
+          ? _value.selectedCategoryId
+          : selectedCategoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AnnouncementsState$CopyWith<$Res>
+    implements $AnnouncementsStateCopyWith<$Res> {
+  factory _$$AnnouncementsState$CopyWith(_$AnnouncementsState$ value,
+          $Res Function(_$AnnouncementsState$) then) =
+      __$$AnnouncementsState$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<Announcement> announcements,
+      List<Category> categories,
+      List<AppUser> users,
+      String? selectedCategoryId});
+}
+
+/// @nodoc
+class __$$AnnouncementsState$CopyWithImpl<$Res>
+    extends _$AnnouncementsStateCopyWithImpl<$Res, _$AnnouncementsState$>
+    implements _$$AnnouncementsState$CopyWith<$Res> {
+  __$$AnnouncementsState$CopyWithImpl(
+      _$AnnouncementsState$ _value, $Res Function(_$AnnouncementsState$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? announcements = null,
+    Object? categories = null,
+    Object? users = null,
+    Object? selectedCategoryId = freezed,
+  }) {
+    return _then(_$AnnouncementsState$(
+      announcements: null == announcements
+          ? _value._announcements
+          : announcements // ignore: cast_nullable_to_non_nullable
+              as List<Announcement>,
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<Category>,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<AppUser>,
+      selectedCategoryId: freezed == selectedCategoryId
+          ? _value.selectedCategoryId
+          : selectedCategoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AnnouncementsState$ implements AnnouncementsState$ {
+  const _$AnnouncementsState$(
+      {final List<Announcement> announcements = const <Announcement>[],
+      final List<Category> categories = const <Category>[],
+      final List<AppUser> users = const <AppUser>[],
+      this.selectedCategoryId})
+      : _announcements = announcements,
+        _categories = categories,
+        _users = users;
+
+  factory _$AnnouncementsState$.fromJson(Map<String, dynamic> json) =>
+      _$$AnnouncementsState$FromJson(json);
+
+  final List<Announcement> _announcements;
+  @override
+  @JsonKey()
+  List<Announcement> get announcements {
+    if (_announcements is EqualUnmodifiableListView) return _announcements;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_announcements);
+  }
+
+  final List<Category> _categories;
+  @override
+  @JsonKey()
+  List<Category> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
+
+  final List<AppUser> _users;
+  @override
+  @JsonKey()
+  List<AppUser> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  final String? selectedCategoryId;
+
+  @override
+  String toString() {
+    return 'AnnouncementsState(announcements: $announcements, categories: $categories, users: $users, selectedCategoryId: $selectedCategoryId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AnnouncementsState$ &&
+            const DeepCollectionEquality()
+                .equals(other._announcements, _announcements) &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories) &&
+            const DeepCollectionEquality().equals(other._users, _users) &&
+            (identical(other.selectedCategoryId, selectedCategoryId) ||
+                other.selectedCategoryId == selectedCategoryId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_announcements),
+      const DeepCollectionEquality().hash(_categories),
+      const DeepCollectionEquality().hash(_users),
+      selectedCategoryId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AnnouncementsState$CopyWith<_$AnnouncementsState$> get copyWith =>
+      __$$AnnouncementsState$CopyWithImpl<_$AnnouncementsState$>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AnnouncementsState$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class AnnouncementsState$ implements AnnouncementsState {
+  const factory AnnouncementsState$(
+      {final List<Announcement> announcements,
+      final List<Category> categories,
+      final List<AppUser> users,
+      final String? selectedCategoryId}) = _$AnnouncementsState$;
+
+  factory AnnouncementsState$.fromJson(Map<String, dynamic> json) =
+      _$AnnouncementsState$.fromJson;
+
+  @override
+  List<Announcement> get announcements;
+  @override
+  List<Category> get categories;
+  @override
+  List<AppUser> get users;
+  @override
+  String? get selectedCategoryId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AnnouncementsState$CopyWith<_$AnnouncementsState$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Category _$CategoryFromJson(Map<String, dynamic> json) {
+  return Category$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Category {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  int get icon => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CategoryCopyWith<Category> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CategoryCopyWith<$Res> {
+  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
+      _$CategoryCopyWithImpl<$Res, Category>;
+  @useResult
+  $Res call({String id, String title, int icon});
+}
+
+/// @nodoc
+class _$CategoryCopyWithImpl<$Res, $Val extends Category>
+    implements $CategoryCopyWith<$Res> {
+  _$CategoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? icon = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: null == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$Category$CopyWith<$Res> implements $CategoryCopyWith<$Res> {
+  factory _$$Category$CopyWith(
+          _$Category$ value, $Res Function(_$Category$) then) =
+      __$$Category$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String title, int icon});
+}
+
+/// @nodoc
+class __$$Category$CopyWithImpl<$Res>
+    extends _$CategoryCopyWithImpl<$Res, _$Category$>
+    implements _$$Category$CopyWith<$Res> {
+  __$$Category$CopyWithImpl(
+      _$Category$ _value, $Res Function(_$Category$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? icon = null,
+  }) {
+    return _then(_$Category$(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: null == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Category$ implements Category$ {
+  const _$Category$(
+      {required this.id, required this.title, required this.icon});
+
+  factory _$Category$.fromJson(Map<String, dynamic> json) =>
+      _$$Category$FromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String title;
+  @override
+  final int icon;
+
+  @override
+  String toString() {
+    return 'Category(id: $id, title: $title, icon: $icon)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Category$ &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.icon, icon) || other.icon == icon));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, title, icon);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$Category$CopyWith<_$Category$> get copyWith =>
+      __$$Category$CopyWithImpl<_$Category$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Category$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class Category$ implements Category {
+  const factory Category$(
+      {required final String id,
+      required final String title,
+      required final int icon}) = _$Category$;
+
+  factory Category$.fromJson(Map<String, dynamic> json) = _$Category$.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get title;
+  @override
+  int get icon;
+  @override
+  @JsonKey(ignore: true)
+  _$$Category$CopyWith<_$Category$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Announcement _$AnnouncementFromJson(Map<String, dynamic> json) {
+  return Announcement$.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Announcement {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get categoryId => throw _privateConstructorUsedError;
+  String get userId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AnnouncementCopyWith<Announcement> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnnouncementCopyWith<$Res> {
+  factory $AnnouncementCopyWith(
+          Announcement value, $Res Function(Announcement) then) =
+      _$AnnouncementCopyWithImpl<$Res, Announcement>;
+  @useResult
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      String image,
+      String city,
+      String categoryId,
+      String userId});
+}
+
+/// @nodoc
+class _$AnnouncementCopyWithImpl<$Res, $Val extends Announcement>
+    implements $AnnouncementCopyWith<$Res> {
+  _$AnnouncementCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? image = null,
+    Object? city = null,
+    Object? categoryId = null,
+    Object? userId = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$Announcement$CopyWith<$Res>
+    implements $AnnouncementCopyWith<$Res> {
+  factory _$$Announcement$CopyWith(
+          _$Announcement$ value, $Res Function(_$Announcement$) then) =
+      __$$Announcement$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      String image,
+      String city,
+      String categoryId,
+      String userId});
+}
+
+/// @nodoc
+class __$$Announcement$CopyWithImpl<$Res>
+    extends _$AnnouncementCopyWithImpl<$Res, _$Announcement$>
+    implements _$$Announcement$CopyWith<$Res> {
+  __$$Announcement$CopyWithImpl(
+      _$Announcement$ _value, $Res Function(_$Announcement$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? image = null,
+    Object? city = null,
+    Object? categoryId = null,
+    Object? userId = null,
+  }) {
+    return _then(_$Announcement$(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$Announcement$ implements Announcement$ {
+  const _$Announcement$(
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.image,
+      required this.city,
+      required this.categoryId,
+      required this.userId});
+
+  factory _$Announcement$.fromJson(Map<String, dynamic> json) =>
+      _$$Announcement$FromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String title;
+  @override
+  final String description;
+  @override
+  final String image;
+  @override
+  final String city;
+  @override
+  final String categoryId;
+  @override
+  final String userId;
+
+  @override
+  String toString() {
+    return 'Announcement(id: $id, title: $title, description: $description, image: $image, city: $city, categoryId: $categoryId, userId: $userId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$Announcement$ &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, title, description, image, city, categoryId, userId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$Announcement$CopyWith<_$Announcement$> get copyWith =>
+      __$$Announcement$CopyWithImpl<_$Announcement$>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$Announcement$ToJson(
+      this,
+    );
+  }
+}
+
+abstract class Announcement$ implements Announcement {
+  const factory Announcement$(
+      {required final String id,
+      required final String title,
+      required final String description,
+      required final String image,
+      required final String city,
+      required final String categoryId,
+      required final String userId}) = _$Announcement$;
+
+  factory Announcement$.fromJson(Map<String, dynamic> json) =
+      _$Announcement$.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get title;
+  @override
+  String get description;
+  @override
+  String get image;
+  @override
+  String get city;
+  @override
+  String get categoryId;
+  @override
+  String get userId;
+  @override
+  @JsonKey(ignore: true)
+  _$$Announcement$CopyWith<_$Announcement$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AppState _$AppStateFromJson(Map<String, dynamic> json) {
   return AppState$.fromJson(json);
 }
@@ -21,6 +686,7 @@ AppState _$AppStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppState {
   AuthState get auth => throw _privateConstructorUsedError;
+  AnnouncementsState get announcements => throw _privateConstructorUsedError;
   Set<String> get pendingActions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,9 +700,13 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({AuthState auth, Set<String> pendingActions});
+  $Res call(
+      {AuthState auth,
+      AnnouncementsState announcements,
+      Set<String> pendingActions});
 
   $AuthStateCopyWith<$Res> get auth;
+  $AnnouncementsStateCopyWith<$Res> get announcements;
 }
 
 /// @nodoc
@@ -53,6 +723,7 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   @override
   $Res call({
     Object? auth = null,
+    Object? announcements = null,
     Object? pendingActions = null,
   }) {
     return _then(_value.copyWith(
@@ -60,6 +731,10 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as AuthState,
+      announcements: null == announcements
+          ? _value.announcements
+          : announcements // ignore: cast_nullable_to_non_nullable
+              as AnnouncementsState,
       pendingActions: null == pendingActions
           ? _value.pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -74,6 +749,14 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
       return _then(_value.copyWith(auth: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnnouncementsStateCopyWith<$Res> get announcements {
+    return $AnnouncementsStateCopyWith<$Res>(_value.announcements, (value) {
+      return _then(_value.copyWith(announcements: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -83,10 +766,15 @@ abstract class _$$AppState$CopyWith<$Res> implements $AppStateCopyWith<$Res> {
       __$$AppState$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AuthState auth, Set<String> pendingActions});
+  $Res call(
+      {AuthState auth,
+      AnnouncementsState announcements,
+      Set<String> pendingActions});
 
   @override
   $AuthStateCopyWith<$Res> get auth;
+  @override
+  $AnnouncementsStateCopyWith<$Res> get announcements;
 }
 
 /// @nodoc
@@ -101,6 +789,7 @@ class __$$AppState$CopyWithImpl<$Res>
   @override
   $Res call({
     Object? auth = null,
+    Object? announcements = null,
     Object? pendingActions = null,
   }) {
     return _then(_$AppState$(
@@ -108,6 +797,10 @@ class __$$AppState$CopyWithImpl<$Res>
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as AuthState,
+      announcements: null == announcements
+          ? _value.announcements
+          : announcements // ignore: cast_nullable_to_non_nullable
+              as AnnouncementsState,
       pendingActions: null == pendingActions
           ? _value._pendingActions
           : pendingActions // ignore: cast_nullable_to_non_nullable
@@ -121,6 +814,7 @@ class __$$AppState$CopyWithImpl<$Res>
 class _$AppState$ implements AppState$ {
   const _$AppState$(
       {this.auth = const AuthState(),
+      this.announcements = const AnnouncementsState(),
       final Set<String> pendingActions = const <String>{}})
       : _pendingActions = pendingActions;
 
@@ -130,6 +824,9 @@ class _$AppState$ implements AppState$ {
   @override
   @JsonKey()
   final AuthState auth;
+  @override
+  @JsonKey()
+  final AnnouncementsState announcements;
   final Set<String> _pendingActions;
   @override
   @JsonKey()
@@ -141,7 +838,7 @@ class _$AppState$ implements AppState$ {
 
   @override
   String toString() {
-    return 'AppState(auth: $auth, pendingActions: $pendingActions)';
+    return 'AppState(auth: $auth, announcements: $announcements, pendingActions: $pendingActions)';
   }
 
   @override
@@ -150,14 +847,16 @@ class _$AppState$ implements AppState$ {
         (other.runtimeType == runtimeType &&
             other is _$AppState$ &&
             (identical(other.auth, auth) || other.auth == auth) &&
+            (identical(other.announcements, announcements) ||
+                other.announcements == announcements) &&
             const DeepCollectionEquality()
                 .equals(other._pendingActions, _pendingActions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, auth, const DeepCollectionEquality().hash(_pendingActions));
+  int get hashCode => Object.hash(runtimeType, auth, announcements,
+      const DeepCollectionEquality().hash(_pendingActions));
 
   @JsonKey(ignore: true)
   @override
@@ -175,12 +874,16 @@ class _$AppState$ implements AppState$ {
 
 abstract class AppState$ implements AppState {
   const factory AppState$(
-      {final AuthState auth, final Set<String> pendingActions}) = _$AppState$;
+      {final AuthState auth,
+      final AnnouncementsState announcements,
+      final Set<String> pendingActions}) = _$AppState$;
 
   factory AppState$.fromJson(Map<String, dynamic> json) = _$AppState$.fromJson;
 
   @override
   AuthState get auth;
+  @override
+  AnnouncementsState get announcements;
   @override
   Set<String> get pendingActions;
   @override

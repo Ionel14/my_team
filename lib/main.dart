@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ import '../epics/auth_epics.dart';
 import '../firebase_options.dart';
 import '../models/index.dart';
 import '../reducer/reducer.dart';
+import 'data/announcements_api.dart';
+import 'epics/announcements_epics.dart';
 import 'presentation/containers/index.dart';
 import 'presentation/create_user_page.dart';
 import 'presentation/home_page.dart';
@@ -23,7 +26,9 @@ Future<void> main() async {
 
   final AuthApi authApi = AuthApi(FirebaseAuth.instance);
   final AuthEpics auth = AuthEpics(authApi);
-  final AppEpics epic = AppEpics(auth);
+  final AnnouncementsApi announcementsApi = AnnouncementsApi(FirebaseFirestore.instance);
+  final AnnouncementsEpics announcementsEpics = AnnouncementsEpics(announcementsApi);
+  final AppEpics epic = AppEpics(auth, announcementsEpics);
 
   final Store<AppState> store = Store<AppState>(
     reducer,

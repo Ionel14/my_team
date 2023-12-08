@@ -1,9 +1,10 @@
-part of "index.dart";
+part of 'index.dart';
 
 @freezed
 class AppState with _$AppState {
   const factory AppState({
     @Default(AuthState()) AuthState auth,
+    @Default(AnnouncementsState()) AnnouncementsState announcements,
     @Default(<String>{}) Set<String> pendingActions,
   }) = AppState$;
 

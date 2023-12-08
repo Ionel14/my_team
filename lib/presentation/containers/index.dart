@@ -4,5 +4,6 @@ import 'package:redux/redux.dart';
 
 import '../../models/index.dart';
 
+part 'announcements_container.dart';
 part 'user_container.dart';
 part 'pending_container.dart';

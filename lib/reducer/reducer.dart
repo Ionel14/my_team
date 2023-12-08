@@ -3,6 +3,7 @@ import 'package:redux/redux.dart';
 
 import '../actions/index.dart';
 import '../models/index.dart';
+import 'announcements_reducer.dart';
 import 'auth_reducer.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
@@ -30,5 +31,6 @@ AppState _reducer(AppState state, dynamic action) {
 
   return state.copyWith(
     auth: authReducer(state.auth, action),
+    announcements: announcementsReducer(state.announcements, action),
   );
 }

@@ -1,17 +1,20 @@
-import 'package:my_team/epics/auth_epics.dart';
 import 'package:redux_epics/redux_epics.dart';
 
-import 'package:my_team/models/index.dart';
+import '../models/index.dart';
+import 'announcements_epics.dart';
+import 'auth_epics.dart';
 
 class AppEpics implements EpicClass<AppState> {
-  AppEpics(this._auth);
+  AppEpics(this._auth, this._announcementsEpics);
 
   final AuthEpics _auth;
+  final AnnouncementsEpics _announcementsEpics;
 
   @override
-  Stream call(Stream actions, EpicStore<AppState> store) {
+  Stream<dynamic> call(Stream<dynamic> actions, EpicStore<AppState> store) {
     return combineEpics(<Epic<AppState>>[
       _auth.call,
+      _announcementsEpics.call,
     ])(actions, store);
   }
 
