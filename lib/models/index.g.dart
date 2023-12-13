@@ -21,7 +21,10 @@ _$AnnouncementsState$ _$$AnnouncementsState$FromJson(
               ?.map((e) => AppUser.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <AppUser>[],
-      selectedCategoryId: json['selectedCategoryId'] as String?,
+      selectedAnnouncementId: json['selectedAnnouncementId'] as String?,
+      announcementOwner: json['announcementOwner'] == null
+          ? null
+          : AppUser.fromJson(json['announcementOwner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AnnouncementsState$ToJson(
@@ -30,7 +33,8 @@ Map<String, dynamic> _$$AnnouncementsState$ToJson(
       'announcements': instance.announcements,
       'categories': instance.categories,
       'users': instance.users,
-      'selectedCategoryId': instance.selectedCategoryId,
+      'selectedAnnouncementId': instance.selectedAnnouncementId,
+      'announcementOwner': instance.announcementOwner,
     };
 
 _$Category$ _$$Category$FromJson(Map<String, dynamic> json) => _$Category$(
@@ -93,7 +97,7 @@ _$AppUser$ _$$AppUser$FromJson(Map<String, dynamic> json) => _$AppUser$(
       uid: json['uid'] as String,
       email: json['email'] as String,
       displayName: json['displayName'] as String,
-      profileUrl: json['profileUrl'] as String?,
+      profileUrl: json['profileUrl'] as String,
     );
 
 Map<String, dynamic> _$$AppUser$ToJson(_$AppUser$ instance) =>

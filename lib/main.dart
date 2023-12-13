@@ -15,6 +15,7 @@ import '../models/index.dart';
 import '../reducer/reducer.dart';
 import 'data/announcements_api.dart';
 import 'epics/announcements_epics.dart';
+import 'presentation/announcement_details_page.dart';
 import 'presentation/containers/index.dart';
 import 'presentation/create_user_page.dart';
 import 'presentation/home_page.dart';
@@ -68,6 +69,7 @@ class MyApp extends StatelessWidget {
           },
           '/login': (BuildContext context) => const LoginPage(),
           '/create': (BuildContext context) => const CreateUserPage(),
+          '/announcementDetails': (BuildContext context) => const AnnouncementDetails(),
         },
       ),
     );

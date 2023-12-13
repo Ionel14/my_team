@@ -2,6 +2,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../models/index.dart';
 
+part 'announcements/add_announcement.dart';
+part 'announcements/get_user.dart';
+part 'announcements/set_announcement.dart';
 part 'announcements/store_user_info.dart';
 part 'announcements/list_category.dart';
 part 'announcements/list_announcements.dart';

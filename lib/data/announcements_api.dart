@@ -45,6 +45,17 @@ class AnnouncementsApi {
 
   }
 
+  Future<AppUser> findUser(String userId) async
+  {
+    final DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('users').doc(userId).get();
+    final Map<String, dynamic> data = snapshot.data()!;
+    Map<String, dynamic> dataNew() => <String, dynamic>{
+      'uid' : snapshot.id,
+    };
+    data.addAll(dataNew());
+    return AppUser.fromJson(data);
+  }
+
   Future<List<Category>> listCategory() async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('categories').get();
 
@@ -70,6 +81,12 @@ class AnnouncementsApi {
 
   }
 
+  Future<Announcement> addAnnouncement(Announcement announcement) async {
+    final DocumentReference<Map<String, dynamic>> announcementJson = await _firestore.collection('announcements').add(announcement.toJson());
 
+    return announcement.copyWith(
+      id: announcementJson.id,
+    );
+  }
 
 }

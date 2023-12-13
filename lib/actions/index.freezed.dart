@@ -15,6 +15,1324 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+mixin _$AddAnnouncement {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId) $default, {
+    required TResult Function(Announcement announcement, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(Announcement announcement, String pendingId)? $default, {
+    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId)? $default, {
+    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value) $default, {
+    required TResult Function(AddAnnouncementSuccessful value) successful,
+    required TResult Function(AddAnnouncementError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(AddAnnouncementStart value)? $default, {
+    TResult? Function(AddAnnouncementSuccessful value)? successful,
+    TResult? Function(AddAnnouncementError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value)? $default, {
+    TResult Function(AddAnnouncementSuccessful value)? successful,
+    TResult Function(AddAnnouncementError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddAnnouncementCopyWith<AddAnnouncement> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AddAnnouncementCopyWith<$Res> {
+  factory $AddAnnouncementCopyWith(
+          AddAnnouncement value, $Res Function(AddAnnouncement) then) =
+      _$AddAnnouncementCopyWithImpl<$Res, AddAnnouncement>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$AddAnnouncementCopyWithImpl<$Res, $Val extends AddAnnouncement>
+    implements $AddAnnouncementCopyWith<$Res> {
+  _$AddAnnouncementCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AddAnnouncementStartCopyWith<$Res>
+    implements $AddAnnouncementCopyWith<$Res> {
+  factory _$$AddAnnouncementStartCopyWith(_$AddAnnouncementStart value,
+          $Res Function(_$AddAnnouncementStart) then) =
+      __$$AddAnnouncementStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Announcement announcement, String pendingId});
+
+  $AnnouncementCopyWith<$Res> get announcement;
+}
+
+/// @nodoc
+class __$$AddAnnouncementStartCopyWithImpl<$Res>
+    extends _$AddAnnouncementCopyWithImpl<$Res, _$AddAnnouncementStart>
+    implements _$$AddAnnouncementStartCopyWith<$Res> {
+  __$$AddAnnouncementStartCopyWithImpl(_$AddAnnouncementStart _value,
+      $Res Function(_$AddAnnouncementStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? announcement = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddAnnouncementStart(
+      announcement: null == announcement
+          ? _value.announcement
+          : announcement // ignore: cast_nullable_to_non_nullable
+              as Announcement,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnnouncementCopyWith<$Res> get announcement {
+    return $AnnouncementCopyWith<$Res>(_value.announcement, (value) {
+      return _then(_value.copyWith(announcement: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddAnnouncementStart implements AddAnnouncementStart {
+  const _$AddAnnouncementStart(
+      {required this.announcement,
+      this.pendingId = _kAddAnnouncementPendingId});
+
+  @override
+  final Announcement announcement;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddAnnouncement(announcement: $announcement, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAnnouncementStart &&
+            (identical(other.announcement, announcement) ||
+                other.announcement == announcement) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, announcement, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddAnnouncementStartCopyWith<_$AddAnnouncementStart> get copyWith =>
+      __$$AddAnnouncementStartCopyWithImpl<_$AddAnnouncementStart>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId) $default, {
+    required TResult Function(Announcement announcement, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return $default(announcement, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(Announcement announcement, String pendingId)? $default, {
+    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return $default?.call(announcement, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId)? $default, {
+    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(announcement, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value) $default, {
+    required TResult Function(AddAnnouncementSuccessful value) successful,
+    required TResult Function(AddAnnouncementError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(AddAnnouncementStart value)? $default, {
+    TResult? Function(AddAnnouncementSuccessful value)? successful,
+    TResult? Function(AddAnnouncementError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value)? $default, {
+    TResult Function(AddAnnouncementSuccessful value)? successful,
+    TResult Function(AddAnnouncementError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddAnnouncementStart implements AddAnnouncement, StartAction {
+  const factory AddAnnouncementStart(
+      {required final Announcement announcement,
+      final String pendingId}) = _$AddAnnouncementStart;
+
+  Announcement get announcement;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddAnnouncementStartCopyWith<_$AddAnnouncementStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddAnnouncementSuccessfulCopyWith<$Res>
+    implements $AddAnnouncementCopyWith<$Res> {
+  factory _$$AddAnnouncementSuccessfulCopyWith(
+          _$AddAnnouncementSuccessful value,
+          $Res Function(_$AddAnnouncementSuccessful) then) =
+      __$$AddAnnouncementSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Announcement announcement, String pendingId});
+
+  $AnnouncementCopyWith<$Res> get announcement;
+}
+
+/// @nodoc
+class __$$AddAnnouncementSuccessfulCopyWithImpl<$Res>
+    extends _$AddAnnouncementCopyWithImpl<$Res, _$AddAnnouncementSuccessful>
+    implements _$$AddAnnouncementSuccessfulCopyWith<$Res> {
+  __$$AddAnnouncementSuccessfulCopyWithImpl(_$AddAnnouncementSuccessful _value,
+      $Res Function(_$AddAnnouncementSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? announcement = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddAnnouncementSuccessful(
+      null == announcement
+          ? _value.announcement
+          : announcement // ignore: cast_nullable_to_non_nullable
+              as Announcement,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnnouncementCopyWith<$Res> get announcement {
+    return $AnnouncementCopyWith<$Res>(_value.announcement, (value) {
+      return _then(_value.copyWith(announcement: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$AddAnnouncementSuccessful implements AddAnnouncementSuccessful {
+  const _$AddAnnouncementSuccessful(this.announcement,
+      [this.pendingId = _kAddAnnouncementPendingId]);
+
+  @override
+  final Announcement announcement;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddAnnouncement.successful(announcement: $announcement, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAnnouncementSuccessful &&
+            (identical(other.announcement, announcement) ||
+                other.announcement == announcement) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, announcement, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddAnnouncementSuccessfulCopyWith<_$AddAnnouncementSuccessful>
+      get copyWith => __$$AddAnnouncementSuccessfulCopyWithImpl<
+          _$AddAnnouncementSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId) $default, {
+    required TResult Function(Announcement announcement, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(announcement, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(Announcement announcement, String pendingId)? $default, {
+    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(announcement, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId)? $default, {
+    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(announcement, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value) $default, {
+    required TResult Function(AddAnnouncementSuccessful value) successful,
+    required TResult Function(AddAnnouncementError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(AddAnnouncementStart value)? $default, {
+    TResult? Function(AddAnnouncementSuccessful value)? successful,
+    TResult? Function(AddAnnouncementError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value)? $default, {
+    TResult Function(AddAnnouncementSuccessful value)? successful,
+    TResult Function(AddAnnouncementError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddAnnouncementSuccessful
+    implements AddAnnouncement, StopAction {
+  const factory AddAnnouncementSuccessful(final Announcement announcement,
+      [final String pendingId]) = _$AddAnnouncementSuccessful;
+
+  Announcement get announcement;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddAnnouncementSuccessfulCopyWith<_$AddAnnouncementSuccessful>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddAnnouncementErrorCopyWith<$Res>
+    implements $AddAnnouncementCopyWith<$Res> {
+  factory _$$AddAnnouncementErrorCopyWith(_$AddAnnouncementError value,
+          $Res Function(_$AddAnnouncementError) then) =
+      __$$AddAnnouncementErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$AddAnnouncementErrorCopyWithImpl<$Res>
+    extends _$AddAnnouncementCopyWithImpl<$Res, _$AddAnnouncementError>
+    implements _$$AddAnnouncementErrorCopyWith<$Res> {
+  __$$AddAnnouncementErrorCopyWithImpl(_$AddAnnouncementError _value,
+      $Res Function(_$AddAnnouncementError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$AddAnnouncementError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddAnnouncementError implements AddAnnouncementError {
+  const _$AddAnnouncementError(this.error, this.stackTrace,
+      [this.pendingId = _kAddAnnouncementPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'AddAnnouncement.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddAnnouncementError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddAnnouncementErrorCopyWith<_$AddAnnouncementError> get copyWith =>
+      __$$AddAnnouncementErrorCopyWithImpl<_$AddAnnouncementError>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId) $default, {
+    required TResult Function(Announcement announcement, String pendingId)
+        successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(Announcement announcement, String pendingId)? $default, {
+    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Announcement announcement, String pendingId)? $default, {
+    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value) $default, {
+    required TResult Function(AddAnnouncementSuccessful value) successful,
+    required TResult Function(AddAnnouncementError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(AddAnnouncementStart value)? $default, {
+    TResult? Function(AddAnnouncementSuccessful value)? successful,
+    TResult? Function(AddAnnouncementError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(AddAnnouncementStart value)? $default, {
+    TResult Function(AddAnnouncementSuccessful value)? successful,
+    TResult Function(AddAnnouncementError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddAnnouncementError implements AddAnnouncement, StopAction {
+  const factory AddAnnouncementError(
+      final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$AddAnnouncementError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddAnnouncementErrorCopyWith<_$AddAnnouncementError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$GetUser {
+  String get pendingId => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String userId, String pendingId) $default, {
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String userId, String pendingId)? $default, {
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userId, String pendingId)? $default, {
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetUserStart value) $default, {
+    required TResult Function(GetUserSuccessful value) successful,
+    required TResult Function(GetUserError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetUserStart value)? $default, {
+    TResult? Function(GetUserSuccessful value)? successful,
+    TResult? Function(GetUserError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetUserStart value)? $default, {
+    TResult Function(GetUserSuccessful value)? successful,
+    TResult Function(GetUserError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $GetUserCopyWith<GetUser> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetUserCopyWith<$Res> {
+  factory $GetUserCopyWith(GetUser value, $Res Function(GetUser) then) =
+      _$GetUserCopyWithImpl<$Res, GetUser>;
+  @useResult
+  $Res call({String pendingId});
+}
+
+/// @nodoc
+class _$GetUserCopyWithImpl<$Res, $Val extends GetUser>
+    implements $GetUserCopyWith<$Res> {
+  _$GetUserCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pendingId = null,
+  }) {
+    return _then(_value.copyWith(
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$GetUserStartCopyWith<$Res> implements $GetUserCopyWith<$Res> {
+  factory _$$GetUserStartCopyWith(
+          _$GetUserStart value, $Res Function(_$GetUserStart) then) =
+      __$$GetUserStartCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String userId, String pendingId});
+}
+
+/// @nodoc
+class __$$GetUserStartCopyWithImpl<$Res>
+    extends _$GetUserCopyWithImpl<$Res, _$GetUserStart>
+    implements _$$GetUserStartCopyWith<$Res> {
+  __$$GetUserStartCopyWithImpl(
+      _$GetUserStart _value, $Res Function(_$GetUserStart) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetUserStart(
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pendingId: null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserStart implements GetUserStart {
+  const _$GetUserStart(
+      {required this.userId, this.pendingId = _kGetUserPendingId});
+
+  @override
+  final String userId;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetUser(userId: $userId, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserStart &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, userId, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserStartCopyWith<_$GetUserStart> get copyWith =>
+      __$$GetUserStartCopyWithImpl<_$GetUserStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String userId, String pendingId) $default, {
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return $default(userId, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String userId, String pendingId)? $default, {
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return $default?.call(userId, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userId, String pendingId)? $default, {
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(userId, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetUserStart value) $default, {
+    required TResult Function(GetUserSuccessful value) successful,
+    required TResult Function(GetUserError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetUserStart value)? $default, {
+    TResult? Function(GetUserSuccessful value)? successful,
+    TResult? Function(GetUserError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetUserStart value)? $default, {
+    TResult Function(GetUserSuccessful value)? successful,
+    TResult Function(GetUserError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserStart implements GetUser, StartAction {
+  const factory GetUserStart(
+      {required final String userId, final String pendingId}) = _$GetUserStart;
+
+  String get userId;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetUserStartCopyWith<_$GetUserStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetUserSuccessfulCopyWith<$Res>
+    implements $GetUserCopyWith<$Res> {
+  factory _$$GetUserSuccessfulCopyWith(
+          _$GetUserSuccessful value, $Res Function(_$GetUserSuccessful) then) =
+      __$$GetUserSuccessfulCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({AppUser user, String pendingId});
+
+  $AppUserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$GetUserSuccessfulCopyWithImpl<$Res>
+    extends _$GetUserCopyWithImpl<$Res, _$GetUserSuccessful>
+    implements _$$GetUserSuccessfulCopyWith<$Res> {
+  __$$GetUserSuccessfulCopyWithImpl(
+      _$GetUserSuccessful _value, $Res Function(_$GetUserSuccessful) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetUserSuccessful(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as AppUser,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppUserCopyWith<$Res> get user {
+    return $AppUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetUserSuccessful implements GetUserSuccessful {
+  const _$GetUserSuccessful(this.user, [this.pendingId = _kGetUserPendingId]);
+
+  @override
+  final AppUser user;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetUser.successful(user: $user, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserSuccessful &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserSuccessfulCopyWith<_$GetUserSuccessful> get copyWith =>
+      __$$GetUserSuccessfulCopyWithImpl<_$GetUserSuccessful>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String userId, String pendingId) $default, {
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return successful(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String userId, String pendingId)? $default, {
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return successful?.call(user, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userId, String pendingId)? $default, {
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(user, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetUserStart value) $default, {
+    required TResult Function(GetUserSuccessful value) successful,
+    required TResult Function(GetUserError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetUserStart value)? $default, {
+    TResult? Function(GetUserSuccessful value)? successful,
+    TResult? Function(GetUserError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetUserStart value)? $default, {
+    TResult Function(GetUserSuccessful value)? successful,
+    TResult Function(GetUserError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserSuccessful implements GetUser, StopAction {
+  const factory GetUserSuccessful(final AppUser user,
+      [final String pendingId]) = _$GetUserSuccessful;
+
+  AppUser get user;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetUserSuccessfulCopyWith<_$GetUserSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetUserErrorCopyWith<$Res> implements $GetUserCopyWith<$Res> {
+  factory _$$GetUserErrorCopyWith(
+          _$GetUserError value, $Res Function(_$GetUserError) then) =
+      __$$GetUserErrorCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Object error, StackTrace stackTrace, String pendingId});
+}
+
+/// @nodoc
+class __$$GetUserErrorCopyWithImpl<$Res>
+    extends _$GetUserCopyWithImpl<$Res, _$GetUserError>
+    implements _$$GetUserErrorCopyWith<$Res> {
+  __$$GetUserErrorCopyWithImpl(
+      _$GetUserError _value, $Res Function(_$GetUserError) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? stackTrace = null,
+    Object? pendingId = null,
+  }) {
+    return _then(_$GetUserError(
+      null == error ? _value.error : error,
+      null == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+      null == pendingId
+          ? _value.pendingId
+          : pendingId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserError implements GetUserError {
+  const _$GetUserError(this.error, this.stackTrace,
+      [this.pendingId = _kGetUserPendingId]);
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+  @override
+  @JsonKey()
+  final String pendingId;
+
+  @override
+  String toString() {
+    return 'GetUser.error(error: $error, stackTrace: $stackTrace, pendingId: $pendingId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserError &&
+            const DeepCollectionEquality().equals(other.error, error) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace) &&
+            (identical(other.pendingId, pendingId) ||
+                other.pendingId == pendingId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(error), stackTrace, pendingId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserErrorCopyWith<_$GetUserError> get copyWith =>
+      __$$GetUserErrorCopyWithImpl<_$GetUserError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String userId, String pendingId) $default, {
+    required TResult Function(AppUser user, String pendingId) successful,
+    required TResult Function(
+            Object error, StackTrace stackTrace, String pendingId)
+        error,
+  }) {
+    return error(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String userId, String pendingId)? $default, {
+    TResult? Function(AppUser user, String pendingId)? successful,
+    TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+  }) {
+    return error?.call(this.error, stackTrace, pendingId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String userId, String pendingId)? $default, {
+    TResult Function(AppUser user, String pendingId)? successful,
+    TResult Function(Object error, StackTrace stackTrace, String pendingId)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace, pendingId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetUserStart value) $default, {
+    required TResult Function(GetUserSuccessful value) successful,
+    required TResult Function(GetUserError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(GetUserStart value)? $default, {
+    TResult? Function(GetUserSuccessful value)? successful,
+    TResult? Function(GetUserError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetUserStart value)? $default, {
+    TResult Function(GetUserSuccessful value)? successful,
+    TResult Function(GetUserError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUserError implements GetUser, StopAction {
+  const factory GetUserError(final Object error, final StackTrace stackTrace,
+      [final String pendingId]) = _$GetUserError;
+
+  Object get error;
+  StackTrace get stackTrace;
+  @override
+  String get pendingId;
+  @override
+  @JsonKey(ignore: true)
+  _$$GetUserErrorCopyWith<_$GetUserError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$SetSelectedAnnouncement {
+  String get announcementId => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetSelectedAnnouncementCopyWith<SetSelectedAnnouncement> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetSelectedAnnouncementCopyWith<$Res> {
+  factory $SetSelectedAnnouncementCopyWith(SetSelectedAnnouncement value,
+          $Res Function(SetSelectedAnnouncement) then) =
+      _$SetSelectedAnnouncementCopyWithImpl<$Res, SetSelectedAnnouncement>;
+  @useResult
+  $Res call({String announcementId});
+}
+
+/// @nodoc
+class _$SetSelectedAnnouncementCopyWithImpl<$Res,
+        $Val extends SetSelectedAnnouncement>
+    implements $SetSelectedAnnouncementCopyWith<$Res> {
+  _$SetSelectedAnnouncementCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? announcementId = null,
+  }) {
+    return _then(_value.copyWith(
+      announcementId: null == announcementId
+          ? _value.announcementId
+          : announcementId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetSelectedAnnouncement$CopyWith<$Res>
+    implements $SetSelectedAnnouncementCopyWith<$Res> {
+  factory _$$SetSelectedAnnouncement$CopyWith(_$SetSelectedAnnouncement$ value,
+          $Res Function(_$SetSelectedAnnouncement$) then) =
+      __$$SetSelectedAnnouncement$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String announcementId});
+}
+
+/// @nodoc
+class __$$SetSelectedAnnouncement$CopyWithImpl<$Res>
+    extends _$SetSelectedAnnouncementCopyWithImpl<$Res,
+        _$SetSelectedAnnouncement$>
+    implements _$$SetSelectedAnnouncement$CopyWith<$Res> {
+  __$$SetSelectedAnnouncement$CopyWithImpl(_$SetSelectedAnnouncement$ _value,
+      $Res Function(_$SetSelectedAnnouncement$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? announcementId = null,
+  }) {
+    return _then(_$SetSelectedAnnouncement$(
+      null == announcementId
+          ? _value.announcementId
+          : announcementId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetSelectedAnnouncement$ implements SetSelectedAnnouncement$ {
+  const _$SetSelectedAnnouncement$(this.announcementId);
+
+  @override
+  final String announcementId;
+
+  @override
+  String toString() {
+    return 'SetSelectedAnnouncement(announcementId: $announcementId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetSelectedAnnouncement$ &&
+            (identical(other.announcementId, announcementId) ||
+                other.announcementId == announcementId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, announcementId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetSelectedAnnouncement$CopyWith<_$SetSelectedAnnouncement$>
+      get copyWith =>
+          __$$SetSelectedAnnouncement$CopyWithImpl<_$SetSelectedAnnouncement$>(
+              this, _$identity);
+}
+
+abstract class SetSelectedAnnouncement$ implements SetSelectedAnnouncement {
+  const factory SetSelectedAnnouncement$(final String announcementId) =
+      _$SetSelectedAnnouncement$;
+
+  @override
+  String get announcementId;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetSelectedAnnouncement$CopyWith<_$SetSelectedAnnouncement$>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$StoreUserInfo {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

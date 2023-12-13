@@ -23,7 +23,8 @@ mixin _$AnnouncementsState {
   List<Announcement> get announcements => throw _privateConstructorUsedError;
   List<Category> get categories => throw _privateConstructorUsedError;
   List<AppUser> get users => throw _privateConstructorUsedError;
-  String? get selectedCategoryId => throw _privateConstructorUsedError;
+  String? get selectedAnnouncementId => throw _privateConstructorUsedError;
+  AppUser? get announcementOwner => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +42,10 @@ abstract class $AnnouncementsStateCopyWith<$Res> {
       {List<Announcement> announcements,
       List<Category> categories,
       List<AppUser> users,
-      String? selectedCategoryId});
+      String? selectedAnnouncementId,
+      AppUser? announcementOwner});
+
+  $AppUserCopyWith<$Res>? get announcementOwner;
 }
 
 /// @nodoc
@@ -60,7 +64,8 @@ class _$AnnouncementsStateCopyWithImpl<$Res, $Val extends AnnouncementsState>
     Object? announcements = null,
     Object? categories = null,
     Object? users = null,
-    Object? selectedCategoryId = freezed,
+    Object? selectedAnnouncementId = freezed,
+    Object? announcementOwner = freezed,
   }) {
     return _then(_value.copyWith(
       announcements: null == announcements
@@ -75,11 +80,27 @@ class _$AnnouncementsStateCopyWithImpl<$Res, $Val extends AnnouncementsState>
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
               as List<AppUser>,
-      selectedCategoryId: freezed == selectedCategoryId
-          ? _value.selectedCategoryId
-          : selectedCategoryId // ignore: cast_nullable_to_non_nullable
+      selectedAnnouncementId: freezed == selectedAnnouncementId
+          ? _value.selectedAnnouncementId
+          : selectedAnnouncementId // ignore: cast_nullable_to_non_nullable
               as String?,
+      announcementOwner: freezed == announcementOwner
+          ? _value.announcementOwner
+          : announcementOwner // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AppUserCopyWith<$Res>? get announcementOwner {
+    if (_value.announcementOwner == null) {
+      return null;
+    }
+
+    return $AppUserCopyWith<$Res>(_value.announcementOwner!, (value) {
+      return _then(_value.copyWith(announcementOwner: value) as $Val);
+    });
   }
 }
 
@@ -95,7 +116,11 @@ abstract class _$$AnnouncementsState$CopyWith<$Res>
       {List<Announcement> announcements,
       List<Category> categories,
       List<AppUser> users,
-      String? selectedCategoryId});
+      String? selectedAnnouncementId,
+      AppUser? announcementOwner});
+
+  @override
+  $AppUserCopyWith<$Res>? get announcementOwner;
 }
 
 /// @nodoc
@@ -112,7 +137,8 @@ class __$$AnnouncementsState$CopyWithImpl<$Res>
     Object? announcements = null,
     Object? categories = null,
     Object? users = null,
-    Object? selectedCategoryId = freezed,
+    Object? selectedAnnouncementId = freezed,
+    Object? announcementOwner = freezed,
   }) {
     return _then(_$AnnouncementsState$(
       announcements: null == announcements
@@ -127,10 +153,14 @@ class __$$AnnouncementsState$CopyWithImpl<$Res>
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
               as List<AppUser>,
-      selectedCategoryId: freezed == selectedCategoryId
-          ? _value.selectedCategoryId
-          : selectedCategoryId // ignore: cast_nullable_to_non_nullable
+      selectedAnnouncementId: freezed == selectedAnnouncementId
+          ? _value.selectedAnnouncementId
+          : selectedAnnouncementId // ignore: cast_nullable_to_non_nullable
               as String?,
+      announcementOwner: freezed == announcementOwner
+          ? _value.announcementOwner
+          : announcementOwner // ignore: cast_nullable_to_non_nullable
+              as AppUser?,
     ));
   }
 }
@@ -142,7 +172,8 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
       {final List<Announcement> announcements = const <Announcement>[],
       final List<Category> categories = const <Category>[],
       final List<AppUser> users = const <AppUser>[],
-      this.selectedCategoryId})
+      this.selectedAnnouncementId,
+      this.announcementOwner})
       : _announcements = announcements,
         _categories = categories,
         _users = users;
@@ -178,11 +209,13 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
   }
 
   @override
-  final String? selectedCategoryId;
+  final String? selectedAnnouncementId;
+  @override
+  final AppUser? announcementOwner;
 
   @override
   String toString() {
-    return 'AnnouncementsState(announcements: $announcements, categories: $categories, users: $users, selectedCategoryId: $selectedCategoryId)';
+    return 'AnnouncementsState(announcements: $announcements, categories: $categories, users: $users, selectedAnnouncementId: $selectedAnnouncementId, announcementOwner: $announcementOwner)';
   }
 
   @override
@@ -195,8 +228,10 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
-            (identical(other.selectedCategoryId, selectedCategoryId) ||
-                other.selectedCategoryId == selectedCategoryId));
+            (identical(other.selectedAnnouncementId, selectedAnnouncementId) ||
+                other.selectedAnnouncementId == selectedAnnouncementId) &&
+            (identical(other.announcementOwner, announcementOwner) ||
+                other.announcementOwner == announcementOwner));
   }
 
   @JsonKey(ignore: true)
@@ -206,7 +241,8 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
       const DeepCollectionEquality().hash(_announcements),
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_users),
-      selectedCategoryId);
+      selectedAnnouncementId,
+      announcementOwner);
 
   @JsonKey(ignore: true)
   @override
@@ -228,7 +264,8 @@ abstract class AnnouncementsState$ implements AnnouncementsState {
       {final List<Announcement> announcements,
       final List<Category> categories,
       final List<AppUser> users,
-      final String? selectedCategoryId}) = _$AnnouncementsState$;
+      final String? selectedAnnouncementId,
+      final AppUser? announcementOwner}) = _$AnnouncementsState$;
 
   factory AnnouncementsState$.fromJson(Map<String, dynamic> json) =
       _$AnnouncementsState$.fromJson;
@@ -240,7 +277,9 @@ abstract class AnnouncementsState$ implements AnnouncementsState {
   @override
   List<AppUser> get users;
   @override
-  String? get selectedCategoryId;
+  String? get selectedAnnouncementId;
+  @override
+  AppUser? get announcementOwner;
   @override
   @JsonKey(ignore: true)
   _$$AnnouncementsState$CopyWith<_$AnnouncementsState$> get copyWith =>
@@ -901,7 +940,7 @@ mixin _$AppUser {
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
-  String? get profileUrl => throw _privateConstructorUsedError;
+  String get profileUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -913,7 +952,7 @@ abstract class $AppUserCopyWith<$Res> {
   factory $AppUserCopyWith(AppUser value, $Res Function(AppUser) then) =
       _$AppUserCopyWithImpl<$Res, AppUser>;
   @useResult
-  $Res call({String uid, String email, String displayName, String? profileUrl});
+  $Res call({String uid, String email, String displayName, String profileUrl});
 }
 
 /// @nodoc
@@ -932,7 +971,7 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
     Object? uid = null,
     Object? email = null,
     Object? displayName = null,
-    Object? profileUrl = freezed,
+    Object? profileUrl = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -947,10 +986,10 @@ class _$AppUserCopyWithImpl<$Res, $Val extends AppUser>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      profileUrl: freezed == profileUrl
+      profileUrl: null == profileUrl
           ? _value.profileUrl
           : profileUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -962,7 +1001,7 @@ abstract class _$$AppUser$CopyWith<$Res> implements $AppUserCopyWith<$Res> {
       __$$AppUser$CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String email, String displayName, String? profileUrl});
+  $Res call({String uid, String email, String displayName, String profileUrl});
 }
 
 /// @nodoc
@@ -978,7 +1017,7 @@ class __$$AppUser$CopyWithImpl<$Res>
     Object? uid = null,
     Object? email = null,
     Object? displayName = null,
-    Object? profileUrl = freezed,
+    Object? profileUrl = null,
   }) {
     return _then(_$AppUser$(
       uid: null == uid
@@ -993,10 +1032,10 @@ class __$$AppUser$CopyWithImpl<$Res>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      profileUrl: freezed == profileUrl
+      profileUrl: null == profileUrl
           ? _value.profileUrl
           : profileUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -1008,7 +1047,7 @@ class _$AppUser$ implements AppUser$ {
       {required this.uid,
       required this.email,
       required this.displayName,
-      this.profileUrl});
+      required this.profileUrl});
 
   factory _$AppUser$.fromJson(Map<String, dynamic> json) =>
       _$$AppUser$FromJson(json);
@@ -1020,7 +1059,7 @@ class _$AppUser$ implements AppUser$ {
   @override
   final String displayName;
   @override
-  final String? profileUrl;
+  final String profileUrl;
 
   @override
   String toString() {
@@ -1064,7 +1103,7 @@ abstract class AppUser$ implements AppUser {
       {required final String uid,
       required final String email,
       required final String displayName,
-      final String? profileUrl}) = _$AppUser$;
+      required final String profileUrl}) = _$AppUser$;
 
   factory AppUser$.fromJson(Map<String, dynamic> json) = _$AppUser$.fromJson;
 
@@ -1075,7 +1114,7 @@ abstract class AppUser$ implements AppUser {
   @override
   String get displayName;
   @override
-  String? get profileUrl;
+  String get profileUrl;
   @override
   @JsonKey(ignore: true)
   _$$AppUser$CopyWith<_$AppUser$> get copyWith =>

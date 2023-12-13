@@ -98,48 +98,55 @@ class _HomePageState extends State<HomePage> {
 
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(),
-                                color: Colors.black54,
-                              ),
-                              child: Stack(
-                                fit: StackFit.expand,
-                                children: <Widget>[
-                                  GridTile(
-                                    child: CachedNetworkImage(
-                                      imageUrl: announcement.image,
-                                      fit: BoxFit.contain,
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional.bottomEnd,
-                                    child: Container(
-                                      decoration: const BoxDecoration(
-                                          gradient: LinearGradient(
-                                              begin: AlignmentDirectional.bottomStart,
-                                              end: Alignment.topRight,
-                                              colors: <Color>[
-                                                Colors.white54,
-                                                Colors.transparent,
-                                              ])),
-                                      child: ListTile(
-                                        title: Text(
-                                          '${announcement.title}\n${announcement.city}',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  fontSize: 30,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Colors.white
-                                              )),
-                                        ),
-                                        // trailing: CircleAvatar(
-                                        //    backgroundImage: NetworkImage(),
-                                        // ),
+                            child: GestureDetector(
+                              onTap: () {
+                                StoreProvider.of<AppState>(context).dispatch(SetSelectedAnnouncement(announcement.id));
+                                StoreProvider.of<AppState>(context).dispatch(GetUser(userId: announcement.userId));
+                                Navigator.pushNamed(context, '/announcementDetails');
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(),
+                                  color: Colors.black54,
+                                ),
+                                child: Stack(
+                                  fit: StackFit.expand,
+                                  children: <Widget>[
+                                    GridTile(
+                                      child: CachedNetworkImage(
+                                        imageUrl: announcement.image,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    Align(
+                                      alignment: AlignmentDirectional.bottomEnd,
+                                      child: Container(
+                                        decoration: const BoxDecoration(
+                                            gradient: LinearGradient(
+                                                begin: AlignmentDirectional.bottomStart,
+                                                end: Alignment.topRight,
+                                                colors: <Color>[
+                                                  Colors.white54,
+                                                  Colors.transparent,
+                                                ])),
+                                        child: ListTile(
+                                          title: Text(
+                                            '${announcement.title}\n${announcement.city}',
+                                            style: GoogleFonts.lato(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 30,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white
+                                                )),
+                                          ),
+                                          // trailing: CircleAvatar(
+                                          //    backgroundImage: NetworkImage(),
+                                          // ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );

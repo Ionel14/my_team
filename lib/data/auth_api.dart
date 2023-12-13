@@ -14,6 +14,7 @@ class AuthApi {
           uid: user.uid,
           email: user.email!,
           displayName: email.split('@').first,
+          profileUrl:'https://fastly.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g',
       );
   }
 
@@ -25,7 +26,7 @@ class AuthApi {
           uid: user.uid,
           email: user.email!,
           displayName: user.displayName ?? email.split('@').first,
-          profileUrl: user.photoURL,
+          profileUrl: user.photoURL!,
       );
   }
 
@@ -42,7 +43,7 @@ class AuthApi {
           email: user.email!,
           displayName:
             user.displayName == null || user.displayName!.isEmpty ? user.email!.split('@').first : user.displayName!,
-          profileUrl: user.photoURL,
+          profileUrl: user.photoURL != null ? user.photoURL! : '',
       );
   }
 
