@@ -27,7 +27,7 @@ class AnnouncementsApi {
     // categoryJson = tennis.toJson();
     // categoryJson.remove('id');
     // await _firestore.collection('categories').add(categoryJson);
-    
+
     // Announcement announcement1 = const Announcement(id: '1', title: 'Looking for a football team', description: 'I live in Bv and I look for some guys to play football in the evenings or weekends', image: 'https://picsum.photos/seed/picsum/100/150', city: 'BV', categoryId: 'zuT2dxgYgU4fTATQimpz', userId: '7zY9KdDnBdQkYsPUbuo0d6pigky1');
     // Map<String, dynamic> announcementJson = announcement1.toJson();
     // announcementJson.remove('id');
@@ -42,16 +42,14 @@ class AnnouncementsApi {
     // announcementJson = announcement1.toJson();
     // announcementJson.remove('id');
     // await _firestore.collection('announcements').add(announcementJson);
-
   }
 
-  Future<AppUser> findUser(String userId) async
-  {
+  Future<AppUser> findUser(String userId) async {
     final DocumentSnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('users').doc(userId).get();
     final Map<String, dynamic> data = snapshot.data()!;
     Map<String, dynamic> dataNew() => <String, dynamic>{
-      'uid' : snapshot.id,
-    };
+          'uid': snapshot.id,
+        };
     data.addAll(dataNew());
     return AppUser.fromJson(data);
   }
@@ -67,26 +65,24 @@ class AnnouncementsApi {
   Future<List<Announcement>> listAnnouncements() async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('announcements').get();
 
-    return snapshot.docs
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
-          final Map<String, dynamic> data = doc.data();
-          final String id = doc.id;
-          Map<String, dynamic> dataNew() => <String, dynamic>{
-            'id' : id,
+    return snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+      final Map<String, dynamic> data = doc.data();
+      final String id = doc.id;
+      Map<String, dynamic> dataNew() => <String, dynamic>{
+            'id': id,
           };
 
-          data.addAll(dataNew());
-          return Announcement.fromJson(data);
+      data.addAll(dataNew());
+      return Announcement.fromJson(data);
     }).toList();
-
   }
 
   Future<Announcement> addAnnouncement(Announcement announcement) async {
-    final DocumentReference<Map<String, dynamic>> announcementJson = await _firestore.collection('announcements').add(announcement.toJson());
+    final DocumentReference<Map<String, dynamic>> announcementJson =
+        await _firestore.collection('announcements').add(announcement.toJson());
 
     return announcement.copyWith(
       id: announcementJson.id,
     );
   }
-
 }

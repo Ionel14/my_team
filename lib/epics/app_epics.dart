@@ -17,5 +17,4 @@ class AppEpics implements EpicClass<AppState> {
       _announcementsEpics.call,
     ])(actions, store);
   }
-
 }

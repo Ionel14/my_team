@@ -12,8 +12,7 @@ class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() =>
-      _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
@@ -33,135 +32,127 @@ class _HomePageState extends State<HomePage> {
   // }
   bool called = false;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-        appBar: AppBar(
-          title: const Center(
-            child: Text(
-              'Pictures',
-            ),
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            'Pictures',
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.logout),
-              onPressed: () {
-                StoreProvider.of<AppState>(context).dispatch(const LogOutUser());
-                Navigator.pushReplacementNamed(context, '/login');
-              },
-            ),
-          ],
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              StoreProvider.of<AppState>(context).dispatch(const LogOutUser());
+              Navigator.pushReplacementNamed(context, '/login');
+            },
+          ),
+        ],
+      ),
+      body: PendingContainer(
+        builder: (BuildContext context, Set<String> pendingActions) {
+          return AnnouncementsContainer(builder: (BuildContext context, List<Announcement> announcements) {
+            if (!called) {
+              final Store<AppState> store = StoreProvider.of(context);
+              store.dispatch(const ListAnnouncementsStart());
+              called = true;
 
-        body: PendingContainer(
-          builder: (BuildContext context, Set<String> pendingActions) {
-            return AnnouncementsContainer(builder: (BuildContext context, List<Announcement> announcements) {
+              return const Center(
+                child: Image(image: AssetImage('assets/football.gif')),
+              );
+            }
 
-              if (!called) {
-                final Store<AppState> store = StoreProvider.of(context);
-                store.dispatch(const ListAnnouncementsStart());
-                called = true;
+            if (pendingActions.contains(ListAnnouncements.pendingKey) && announcements.isEmpty) {
+              return const Center(
+                child: Image(image: AssetImage('assets/football.gif')),
+              );
+            }
 
-                return const Center(
-                  child: Image(image: AssetImage('assets/football.gif')),
-                );
-              }
-
-              if (pendingActions.contains(ListAnnouncements.pendingKey) && announcements.isEmpty) {
-
-                return const Center(
-                  child: Image(image: AssetImage('assets/football.gif')),
-                );
-              }
-
-              if(!pendingActions.contains(ListAnnouncements.pendingKey) && announcements.isEmpty){
-                return Center(
-                  child: Text(
-                      'No Announcements Found',
-                      style: GoogleFonts.lato(
-                  textStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                  ),
-                );
-              }
-
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[
-                    Expanded(
-                      child: GridView.builder(
-                        itemCount: announcements.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          final Announcement announcement = announcements[index];
-
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: GestureDetector(
-                              onTap: () {
-                                StoreProvider.of<AppState>(context).dispatch(SetSelectedAnnouncement(announcement.id));
-                                StoreProvider.of<AppState>(context).dispatch(GetUser(userId: announcement.userId));
-                                Navigator.pushNamed(context, '/announcementDetails');
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  border: Border.all(),
-                                  color: Colors.black54,
-                                ),
-                                child: Stack(
-                                  fit: StackFit.expand,
-                                  children: <Widget>[
-                                    GridTile(
-                                      child: CachedNetworkImage(
-                                        imageUrl: announcement.image,
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment: AlignmentDirectional.bottomEnd,
-                                      child: Container(
-                                        decoration: const BoxDecoration(
-                                            gradient: LinearGradient(
-                                                begin: AlignmentDirectional.bottomStart,
-                                                end: Alignment.topRight,
-                                                colors: <Color>[
-                                                  Colors.white54,
-                                                  Colors.transparent,
-                                                ])),
-                                        child: ListTile(
-                                          title: Text(
-                                            '${announcement.title}\n${announcement.city}',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    fontSize: 30,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Colors.white
-                                                )),
-                                          ),
-                                          // trailing: CircleAvatar(
-                                          //    backgroundImage: NetworkImage(),
-                                          // ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-                        ),
-                      ),
-                    ),
-                  ],
+            if (!pendingActions.contains(ListAnnouncements.pendingKey) && announcements.isEmpty) {
+              return Center(
+                child: Text(
+                  'No Announcements Found',
+                  style: GoogleFonts.lato(textStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
                 ),
               );
-            });
-          },
-        ),
+            }
+
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    child: GridView.builder(
+                      itemCount: announcements.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final Announcement announcement = announcements[index];
+
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              StoreProvider.of<AppState>(context).dispatch(SetSelectedAnnouncement(announcement.id));
+                              StoreProvider.of<AppState>(context).dispatch(GetUser(userId: announcement.userId));
+                              Navigator.pushNamed(context, '/announcementDetails');
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(),
+                                color: Colors.black54,
+                              ),
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: <Widget>[
+                                  GridTile(
+                                    child: CachedNetworkImage(
+                                      imageUrl: announcement.image,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional.bottomEnd,
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: AlignmentDirectional.bottomStart,
+                                              end: Alignment.topRight,
+                                              colors: <Color>[
+                                            Colors.white54,
+                                            Colors.transparent,
+                                          ])),
+                                      child: ListTile(
+                                        title: Text(
+                                          '${announcement.title}\n${announcement.city}',
+                                          style: GoogleFonts.lato(
+                                              textStyle: const TextStyle(
+                                                  fontSize: 30, fontWeight: FontWeight.w600, color: Colors.white)),
+                                        ),
+                                        // trailing: CircleAvatar(
+                                        //    backgroundImage: NetworkImage(),
+                                        // ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          });
+        },
+      ),
     );
   }
 }

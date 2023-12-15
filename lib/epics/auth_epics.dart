@@ -20,7 +20,6 @@ class AuthEpics implements EpicClass<AppState> {
     ])(actions, store);
   }
 
-
   Stream<dynamic> _createUserStart(Stream<CreateUserStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((CreateUserStart action) {
       return Stream<void>.value(null)
@@ -41,7 +40,7 @@ class AuthEpics implements EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.loginUser(email: action.email, password: action.password))
           .map((AppUser user) => LoginUser.successful(user))
-          .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginUser.error(error,stackTrace))
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => LoginUser.error(error, stackTrace))
           .doOnData(action.result);
     });
   }

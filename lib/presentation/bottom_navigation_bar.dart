@@ -20,35 +20,30 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return PageIndexContainer(
-        builder: (BuildContext context, int pageIndex) {
-          return Scaffold(
-            body: _pages[pageIndex],
-            bottomNavigationBar: BottomNavigationBar(
-            currentIndex: pageIndex,
-            onTap: (int index) => StoreProvider.of<AppState>(context).dispatch(SetPageIndex(index)),
-            selectedItemColor: Colors.deepOrange,
-            backgroundColor: Colors.green,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-
-              BottomNavigationBarItem(
-                icon: Icon(Icons.add),
-                label: 'Add Announcement',
-              ),
-
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'View Profile',
-              ),
-
-            ],
-          ),
-          );
-        }
-    );
+    return PageIndexContainer(builder: (BuildContext context, int pageIndex) {
+      return Scaffold(
+        body: _pages[pageIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: pageIndex,
+          onTap: (int index) => StoreProvider.of<AppState>(context).dispatch(SetPageIndex(index)),
+          selectedItemColor: Colors.deepOrange,
+          backgroundColor: Colors.green,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add),
+              label: 'Add Announcement',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'View Profile',
+            ),
+          ],
+        ),
+      );
+    });
   }
 }

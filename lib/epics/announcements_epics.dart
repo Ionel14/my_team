@@ -1,4 +1,3 @@
-
 import 'package:redux_epics/redux_epics.dart';
 import 'package:rxdart/transformers.dart';
 
@@ -44,7 +43,7 @@ class AnnouncementsEpics implements EpicClass<AppState> {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.findUser(action.userId))
           .map((AppUser user) => GetUser.successful(user))
-          .onErrorReturnWith((Object error,StackTrace stackTrace) => GetUser.error(error, stackTrace));
+          .onErrorReturnWith((Object error, StackTrace stackTrace) => GetUser.error(error, stackTrace));
     });
   }
 

@@ -7,12 +7,9 @@ class AnnouncementsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return StoreConnector<AppState, List<Announcement>>(
-        builder: builder,
-        converter: (Store<AppState> store) => store.state.announcements.announcements,
+      builder: builder,
+      converter: (Store<AppState> store) => store.state.announcements.announcements,
     );
   }
-
-  
 }

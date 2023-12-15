@@ -10,7 +10,6 @@ Reducer<AnnouncementsState> announcementsReducer = combineReducers(<Reducer<Anno
   TypedReducer<AnnouncementsState, SetPageIndex>(_setPageIndex).call,
   TypedReducer<AnnouncementsState, GetUserSuccessful>(_getUser).call,
   TypedReducer<AnnouncementsState, AddAnnouncementSuccessful>(_addAnnouncementSuccessful).call,
-
 ]);
 
 AnnouncementsState _listAnnouncements(AnnouncementsState state, ListAnnouncementsSuccessful action) {

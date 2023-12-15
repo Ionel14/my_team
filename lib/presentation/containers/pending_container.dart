@@ -1,6 +1,6 @@
 part of 'index.dart';
 
-class PendingContainer extends StatelessWidget{
+class PendingContainer extends StatelessWidget {
   const PendingContainer({super.key, required this.builder});
 
   final ViewModelBuilder<Set<String>> builder;
@@ -12,5 +12,4 @@ class PendingContainer extends StatelessWidget{
       converter: (Store<AppState> store) => store.state.pendingActions,
     );
   }
-
 }

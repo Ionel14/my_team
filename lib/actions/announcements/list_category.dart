@@ -4,7 +4,6 @@ const String _kListCategoryPendingId = 'listCategory';
 
 @freezed
 class ListCategory with _$ListCategory {
-
   @Implements<StartAction>()
   const factory ListCategory({
     @Default(_kListCategoryPendingId) String pendingId,
@@ -12,16 +11,16 @@ class ListCategory with _$ListCategory {
 
   @Implements<StopAction>()
   const factory ListCategory.successful(
-      List<Category> categories, [
-      @Default(_kListCategoryPendingId) String pendingId,
-      ]) = ListCategorySuccessful;
+    List<Category> categories, [
+    @Default(_kListCategoryPendingId) String pendingId,
+  ]) = ListCategorySuccessful;
 
   @Implements<StopAction>()
   const factory ListCategory.error(
-      Object error,
-      StackTrace stackTrace, [
-      @Default(_kListCategoryPendingId) String pendingId,
-      ]) = ListCategoryError;
+    Object error,
+    StackTrace stackTrace, [
+    @Default(_kListCategoryPendingId) String pendingId,
+  ]) = ListCategoryError;
 
   static String get pendingKey => _kListCategoryPendingId;
 }

@@ -26,12 +26,10 @@ class _CreateUserPage extends State<CreateUserPage> {
     if (action is CreateUserSuccessful) {
       Navigator.pushReplacementNamed(context, '/');
     } else if (action is CreateUserError) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(action.error.toString().split(']')[1]),
-            duration: const Duration(seconds: 5),
-          )
-      );
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(action.error.toString().split(']')[1]),
+        duration: const Duration(seconds: 5),
+      ));
     }
   }
 
@@ -41,9 +39,8 @@ class _CreateUserPage extends State<CreateUserPage> {
       resizeToAvoidBottomInset: false,
       body: Container(
         decoration: const BoxDecoration(color: Colors.green),
-        child: Stack(
-          children: <Widget>[
-            Column(
+        child: Stack(children: <Widget>[
+          Column(
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 56.0),
@@ -53,14 +50,11 @@ class _CreateUserPage extends State<CreateUserPage> {
                   ),
                   child: Center(
                       child: Text(
-                        'My Team',
-                        style: GoogleFonts.lato(
-                          textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-                      )
-                  ),
+                    'My Team',
+                    style: GoogleFonts.lato(textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                  )),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: PendingContainer(builder: (BuildContext context, Set<String> pending) {
@@ -91,14 +85,13 @@ class _CreateUserPage extends State<CreateUserPage> {
                                 _email = value;
                               },
                               decoration: InputDecoration(
-                                hintText: 'Email',
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  borderSide: const BorderSide(
-                                    color: Colors.white70,
-                                  ),
-                                )
-                              ),
+                                  hintText: 'Email',
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    borderSide: const BorderSide(
+                                      color: Colors.white70,
+                                    ),
+                                  )),
                               keyboardType: TextInputType.emailAddress,
                             ),
                           ),
@@ -115,8 +108,7 @@ class _CreateUserPage extends State<CreateUserPage> {
                                   borderSide: const BorderSide(
                                     color: Colors.white70,
                                   ),
-                                )
-                            ),
+                                )),
                           ),
                           const SizedBox(
                             height: 32,
@@ -134,8 +126,10 @@ class _CreateUserPage extends State<CreateUserPage> {
                               child: ElevatedButton(
                                 onPressed: _onNext,
                                 style: ButtonStyle(
-                                  backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) => Colors.purple),
-                                  textStyle: MaterialStateTextStyle.resolveWith((Set<MaterialState> states) => const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                  backgroundColor:
+                                      MaterialStateColor.resolveWith((Set<MaterialState> states) => Colors.purple),
+                                  textStyle: MaterialStateTextStyle.resolveWith((Set<MaterialState> states) =>
+                                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
@@ -158,8 +152,10 @@ class _CreateUserPage extends State<CreateUserPage> {
                                   Navigator.pushReplacementNamed(context, '/login');
                                 },
                                 style: ButtonStyle(
-                                  backgroundColor: MaterialStateColor.resolveWith((Set<MaterialState> states) => Colors.purple),
-                                  textStyle: MaterialStateTextStyle.resolveWith((Set<MaterialState> states) => const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                  backgroundColor:
+                                      MaterialStateColor.resolveWith((Set<MaterialState> states) => Colors.purple),
+                                  textStyle: MaterialStateTextStyle.resolveWith((Set<MaterialState> states) =>
+                                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
@@ -178,26 +174,25 @@ class _CreateUserPage extends State<CreateUserPage> {
               ),
             ],
           ),
-            Align(
-              alignment:Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset(
-                  'assets/football_player.png',
-                ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset(
+                'assets/football_player.png',
               ),
             ),
-            Align(
-              alignment:Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset(
-                  'assets/tennis.png',
-                ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset(
+                'assets/tennis.png',
               ),
             ),
-        ]
-        ),
+          ),
+        ]),
       ),
     );
   }

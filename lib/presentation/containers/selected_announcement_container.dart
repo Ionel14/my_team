@@ -9,8 +9,8 @@ class SelectedAnnouncementContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, Announcement>(
       builder: builder,
-      converter: (Store<AppState> store) => store.state.announcements.announcements.firstWhere((Announcement announcement) =>
-      announcement.id == store.state.announcements.selectedAnnouncementId),
+      converter: (Store<AppState> store) => store.state.announcements.announcements.firstWhere(
+          (Announcement announcement) => announcement.id == store.state.announcements.selectedAnnouncementId),
     );
   }
 }

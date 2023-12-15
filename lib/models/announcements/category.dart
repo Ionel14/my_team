@@ -6,7 +6,7 @@ class Category with _$Category {
     required String id,
     required String title,
     required int icon,
-}) = Category$;
+  }) = Category$;
 
   factory Category.fromJson(Map<dynamic, dynamic> json) => _$CategoryFromJson(Map<String, dynamic>.from(json));
 }

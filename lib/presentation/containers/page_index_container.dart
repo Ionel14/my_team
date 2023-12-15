@@ -7,9 +7,9 @@ class PageIndexContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector <AppState, int>(
-        builder: builder,
-        converter: (Store<AppState> store) => store.state.announcements.pageIndex,
+    return StoreConnector<AppState, int>(
+      builder: builder,
+      converter: (Store<AppState> store) => store.state.announcements.pageIndex,
     );
   }
 }
