@@ -16,9 +16,10 @@ import '../reducer/reducer.dart';
 import 'data/announcements_api.dart';
 import 'epics/announcements_epics.dart';
 import 'presentation/announcement_details_page.dart';
+import 'presentation/bottom_navigation_bar.dart';
 import 'presentation/containers/index.dart';
+import 'presentation/create_announcement_page.dart';
 import 'presentation/create_user_page.dart';
-import 'presentation/home_page.dart';
 import 'presentation/login_page.dart';
 
 Future<void> main() async {
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
-        title: 'E-mag',
+        title: 'Find my team',
         theme: ThemeData.dark(),
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
@@ -63,13 +64,14 @@ class MyApp extends StatelessWidget {
                 if (user == null) {
                   return const LoginPage();
                 }
-                return const HomePage();
+                return const MyBottomNavigationBar();
               },
             );
           },
           '/login': (BuildContext context) => const LoginPage(),
           '/create': (BuildContext context) => const CreateUserPage(),
           '/announcementDetails': (BuildContext context) => const AnnouncementDetails(),
+          '/createAnnouncement': (BuildContext context) => const CreateAnnouncementPage(),
         },
       ),
     );

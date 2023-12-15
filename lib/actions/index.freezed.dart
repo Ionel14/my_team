@@ -15,6 +15,124 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+mixin _$SetPageIndex {
+  int get pageIndex => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SetPageIndexCopyWith<SetPageIndex> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SetPageIndexCopyWith<$Res> {
+  factory $SetPageIndexCopyWith(
+          SetPageIndex value, $Res Function(SetPageIndex) then) =
+      _$SetPageIndexCopyWithImpl<$Res, SetPageIndex>;
+  @useResult
+  $Res call({int pageIndex});
+}
+
+/// @nodoc
+class _$SetPageIndexCopyWithImpl<$Res, $Val extends SetPageIndex>
+    implements $SetPageIndexCopyWith<$Res> {
+  _$SetPageIndexCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pageIndex = null,
+  }) {
+    return _then(_value.copyWith(
+      pageIndex: null == pageIndex
+          ? _value.pageIndex
+          : pageIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SetPageIndex$CopyWith<$Res>
+    implements $SetPageIndexCopyWith<$Res> {
+  factory _$$SetPageIndex$CopyWith(
+          _$SetPageIndex$ value, $Res Function(_$SetPageIndex$) then) =
+      __$$SetPageIndex$CopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int pageIndex});
+}
+
+/// @nodoc
+class __$$SetPageIndex$CopyWithImpl<$Res>
+    extends _$SetPageIndexCopyWithImpl<$Res, _$SetPageIndex$>
+    implements _$$SetPageIndex$CopyWith<$Res> {
+  __$$SetPageIndex$CopyWithImpl(
+      _$SetPageIndex$ _value, $Res Function(_$SetPageIndex$) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pageIndex = null,
+  }) {
+    return _then(_$SetPageIndex$(
+      null == pageIndex
+          ? _value.pageIndex
+          : pageIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetPageIndex$ implements SetPageIndex$ {
+  const _$SetPageIndex$(this.pageIndex);
+
+  @override
+  final int pageIndex;
+
+  @override
+  String toString() {
+    return 'SetPageIndex(pageIndex: $pageIndex)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetPageIndex$ &&
+            (identical(other.pageIndex, pageIndex) ||
+                other.pageIndex == pageIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pageIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetPageIndex$CopyWith<_$SetPageIndex$> get copyWith =>
+      __$$SetPageIndex$CopyWithImpl<_$SetPageIndex$>(this, _$identity);
+}
+
+abstract class SetPageIndex$ implements SetPageIndex {
+  const factory SetPageIndex$(final int pageIndex) = _$SetPageIndex$;
+
+  @override
+  int get pageIndex;
+  @override
+  @JsonKey(ignore: true)
+  _$$SetPageIndex$CopyWith<_$SetPageIndex$> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AddAnnouncement {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs

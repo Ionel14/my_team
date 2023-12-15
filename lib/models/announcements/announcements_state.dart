@@ -8,6 +8,7 @@ class AnnouncementsState with _$AnnouncementsState {
     @Default(<AppUser>[]) List<AppUser> users,
     String? selectedAnnouncementId,
     AppUser? announcementOwner,
+    @Default(0) int pageIndex,
 }) = AnnouncementsState$;
 
   factory AnnouncementsState.fromJson(Map<dynamic, dynamic> json) => _$AnnouncementsStateFromJson(Map<String, dynamic>.from(json));

@@ -25,6 +25,7 @@ mixin _$AnnouncementsState {
   List<AppUser> get users => throw _privateConstructorUsedError;
   String? get selectedAnnouncementId => throw _privateConstructorUsedError;
   AppUser? get announcementOwner => throw _privateConstructorUsedError;
+  int get pageIndex => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +44,8 @@ abstract class $AnnouncementsStateCopyWith<$Res> {
       List<Category> categories,
       List<AppUser> users,
       String? selectedAnnouncementId,
-      AppUser? announcementOwner});
+      AppUser? announcementOwner,
+      int pageIndex});
 
   $AppUserCopyWith<$Res>? get announcementOwner;
 }
@@ -66,6 +68,7 @@ class _$AnnouncementsStateCopyWithImpl<$Res, $Val extends AnnouncementsState>
     Object? users = null,
     Object? selectedAnnouncementId = freezed,
     Object? announcementOwner = freezed,
+    Object? pageIndex = null,
   }) {
     return _then(_value.copyWith(
       announcements: null == announcements
@@ -88,6 +91,10 @@ class _$AnnouncementsStateCopyWithImpl<$Res, $Val extends AnnouncementsState>
           ? _value.announcementOwner
           : announcementOwner // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      pageIndex: null == pageIndex
+          ? _value.pageIndex
+          : pageIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 
@@ -117,7 +124,8 @@ abstract class _$$AnnouncementsState$CopyWith<$Res>
       List<Category> categories,
       List<AppUser> users,
       String? selectedAnnouncementId,
-      AppUser? announcementOwner});
+      AppUser? announcementOwner,
+      int pageIndex});
 
   @override
   $AppUserCopyWith<$Res>? get announcementOwner;
@@ -139,6 +147,7 @@ class __$$AnnouncementsState$CopyWithImpl<$Res>
     Object? users = null,
     Object? selectedAnnouncementId = freezed,
     Object? announcementOwner = freezed,
+    Object? pageIndex = null,
   }) {
     return _then(_$AnnouncementsState$(
       announcements: null == announcements
@@ -161,6 +170,10 @@ class __$$AnnouncementsState$CopyWithImpl<$Res>
           ? _value.announcementOwner
           : announcementOwner // ignore: cast_nullable_to_non_nullable
               as AppUser?,
+      pageIndex: null == pageIndex
+          ? _value.pageIndex
+          : pageIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -173,7 +186,8 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
       final List<Category> categories = const <Category>[],
       final List<AppUser> users = const <AppUser>[],
       this.selectedAnnouncementId,
-      this.announcementOwner})
+      this.announcementOwner,
+      this.pageIndex = 0})
       : _announcements = announcements,
         _categories = categories,
         _users = users;
@@ -212,10 +226,13 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
   final String? selectedAnnouncementId;
   @override
   final AppUser? announcementOwner;
+  @override
+  @JsonKey()
+  final int pageIndex;
 
   @override
   String toString() {
-    return 'AnnouncementsState(announcements: $announcements, categories: $categories, users: $users, selectedAnnouncementId: $selectedAnnouncementId, announcementOwner: $announcementOwner)';
+    return 'AnnouncementsState(announcements: $announcements, categories: $categories, users: $users, selectedAnnouncementId: $selectedAnnouncementId, announcementOwner: $announcementOwner, pageIndex: $pageIndex)';
   }
 
   @override
@@ -231,7 +248,9 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
             (identical(other.selectedAnnouncementId, selectedAnnouncementId) ||
                 other.selectedAnnouncementId == selectedAnnouncementId) &&
             (identical(other.announcementOwner, announcementOwner) ||
-                other.announcementOwner == announcementOwner));
+                other.announcementOwner == announcementOwner) &&
+            (identical(other.pageIndex, pageIndex) ||
+                other.pageIndex == pageIndex));
   }
 
   @JsonKey(ignore: true)
@@ -242,7 +261,8 @@ class _$AnnouncementsState$ implements AnnouncementsState$ {
       const DeepCollectionEquality().hash(_categories),
       const DeepCollectionEquality().hash(_users),
       selectedAnnouncementId,
-      announcementOwner);
+      announcementOwner,
+      pageIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -265,7 +285,8 @@ abstract class AnnouncementsState$ implements AnnouncementsState {
       final List<Category> categories,
       final List<AppUser> users,
       final String? selectedAnnouncementId,
-      final AppUser? announcementOwner}) = _$AnnouncementsState$;
+      final AppUser? announcementOwner,
+      final int pageIndex}) = _$AnnouncementsState$;
 
   factory AnnouncementsState$.fromJson(Map<String, dynamic> json) =
       _$AnnouncementsState$.fromJson;
@@ -280,6 +301,8 @@ abstract class AnnouncementsState$ implements AnnouncementsState {
   String? get selectedAnnouncementId;
   @override
   AppUser? get announcementOwner;
+  @override
+  int get pageIndex;
   @override
   @JsonKey(ignore: true)
   _$$AnnouncementsState$CopyWith<_$AnnouncementsState$> get copyWith =>

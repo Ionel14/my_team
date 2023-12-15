@@ -7,6 +7,7 @@ Reducer<AnnouncementsState> announcementsReducer = combineReducers(<Reducer<Anno
   TypedReducer<AnnouncementsState, ListAnnouncementsSuccessful>(_listAnnouncements).call,
   TypedReducer<AnnouncementsState, ListCategorySuccessful>(_listCategorySuccessful).call,
   TypedReducer<AnnouncementsState, SetSelectedAnnouncement>(_setSelectedAnnouncement).call,
+  TypedReducer<AnnouncementsState, SetPageIndex>(_setPageIndex).call,
   TypedReducer<AnnouncementsState, GetUserSuccessful>(_getUser).call,
   TypedReducer<AnnouncementsState, AddAnnouncementSuccessful>(_addAnnouncementSuccessful).call,
 
@@ -39,5 +40,11 @@ AnnouncementsState _addAnnouncementSuccessful(AnnouncementsState state, AddAnnou
 AnnouncementsState _listCategorySuccessful(AnnouncementsState state, ListCategorySuccessful action) {
   return state.copyWith(
     categories: action.categories,
+  );
+}
+
+AnnouncementsState _setPageIndex(AnnouncementsState state, SetPageIndex action) {
+  return state.copyWith(
+    pageIndex: action.pageIndex,
   );
 }

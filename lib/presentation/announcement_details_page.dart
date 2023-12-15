@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../models/index.dart';
-import 'containers/get_owner_container.dart';
 import 'containers/index.dart';
 
 class AnnouncementDetails extends StatelessWidget{

@@ -25,6 +25,7 @@ _$AnnouncementsState$ _$$AnnouncementsState$FromJson(
       announcementOwner: json['announcementOwner'] == null
           ? null
           : AppUser.fromJson(json['announcementOwner'] as Map<String, dynamic>),
+      pageIndex: json['pageIndex'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$AnnouncementsState$ToJson(
@@ -35,6 +36,7 @@ Map<String, dynamic> _$$AnnouncementsState$ToJson(
       'users': instance.users,
       'selectedAnnouncementId': instance.selectedAnnouncementId,
       'announcementOwner': instance.announcementOwner,
+      'pageIndex': instance.pageIndex,
     };
 
 _$Category$ _$$Category$FromJson(Map<String, dynamic> json) => _$Category$(

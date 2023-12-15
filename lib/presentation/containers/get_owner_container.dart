@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
-
-import '../../models/index.dart';
+part of 'index.dart';
 
 class GetUserContainer extends StatelessWidget {
   const GetUserContainer({super.key, required this.builder});
