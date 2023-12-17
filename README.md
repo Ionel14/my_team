@@ -1,16 +1,5 @@
 # my_team
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Find My Team este o aplicație în care un utilizator poate lansa un anunț în legătură cu căutarea unuor parteneri de joc la un anumit sport. 
+Spre exemplu un utilizator lanseaza un anunt in care cauta inca 3 oameni pentru un joc de fotbal, acesta ofera o locatie a terenului si anumite detalii legate de acesta (ora, pozitii de jucatori lipsa, etc), 
+iar alti utilizatori pot apela la acesta prin numarul de telefon sau un site de social media.
