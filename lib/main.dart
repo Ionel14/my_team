@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -14,7 +15,9 @@ import '../firebase_options.dart';
 import '../models/index.dart';
 import '../reducer/reducer.dart';
 import 'data/announcements_api.dart';
+import 'data/storage_api.dart';
 import 'epics/announcements_epics.dart';
+import 'epics/storage_epics.dart';
 import 'presentation/announcement_details_page.dart';
 import 'presentation/bottom_navigation_bar.dart';
 import 'presentation/containers/index.dart';
@@ -30,7 +33,9 @@ Future<void> main() async {
   final AuthEpics auth = AuthEpics(authApi);
   final AnnouncementsApi announcementsApi = AnnouncementsApi(FirebaseFirestore.instance);
   final AnnouncementsEpics announcementsEpics = AnnouncementsEpics(announcementsApi);
-  final AppEpics epic = AppEpics(auth, announcementsEpics);
+  final StorageApi storageApi = StorageApi(FirebaseStorage.instance);
+  final StorageEpics storageEpics = StorageEpics(storageApi);
+  final AppEpics epic = AppEpics(auth, announcementsEpics, storageEpics);
 
   final Store<AppState> store = Store<AppState>(
     reducer,

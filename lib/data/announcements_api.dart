@@ -57,9 +57,16 @@ class AnnouncementsApi {
   Future<List<Category>> listCategory() async {
     final QuerySnapshot<Map<String, dynamic>> snapshot = await _firestore.collection('categories').get();
 
-    return snapshot.docs
-        .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) => Category.fromJson(doc.data()))
-        .toList();
+    return snapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+      final Map<String, dynamic> data = doc.data();
+      final String id = doc.id;
+      Map<String, dynamic> dataNew() => <String, dynamic>{
+        'id': id,
+      };
+
+      data.addAll(dataNew());
+      return Category.fromJson(data);
+    }).toList();
   }
 
   Future<List<Announcement>> listAnnouncements() async {
@@ -85,4 +92,9 @@ class AnnouncementsApi {
       id: announcementJson.id,
     );
   }
+
+  // Future<String> storeImage(XFile pickedFile)
+  // {
+  //
+  // }
 }

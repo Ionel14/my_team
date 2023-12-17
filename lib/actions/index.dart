@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../models/index.dart';
 
+part 'storage/store_announcement_image.dart';
 part 'announcements/set_page_index.dart';
 part 'announcements/add_announcement.dart';
 part 'announcements/get_user.dart';
