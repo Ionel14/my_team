@@ -84,13 +84,12 @@ class AnnouncementsApi {
     }).toList();
   }
 
-  Future<Announcement> addAnnouncement(Announcement announcement) async {
-    final DocumentReference<Map<String, dynamic>> announcementJson =
-        await _firestore.collection('announcements').add(announcement.toJson());
+  Future<void> addAnnouncement(Announcement announcement) async {
+    final Map<String, dynamic> announcementJson1 = announcement.toJson();
+    announcementJson1.remove('id');
 
-    return announcement.copyWith(
-      id: announcementJson.id,
-    );
+    await _firestore.collection('announcements').add(announcementJson1);
+
   }
 
   // Future<String> storeImage(XFile pickedFile)

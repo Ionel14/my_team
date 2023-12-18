@@ -51,7 +51,7 @@ class AnnouncementsEpics implements EpicClass<AppState> {
     return actions.flatMap((AddAnnouncementStart action) {
       return Stream<void>.value(null)
           .asyncMap((_) => _api.addAnnouncement(action.announcement))
-          .map((Announcement announcement) => AddAnnouncement.successful(announcement))
+          .mapTo(const AddAnnouncement.successful())
           .onErrorReturnWith((Object error, StackTrace stackTrace) => AddAnnouncement.error(error, stackTrace));
     });
   }

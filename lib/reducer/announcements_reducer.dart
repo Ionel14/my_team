@@ -9,7 +9,6 @@ Reducer<AnnouncementsState> announcementsReducer = combineReducers(<Reducer<Anno
   TypedReducer<AnnouncementsState, SetSelectedAnnouncement>(_setSelectedAnnouncement).call,
   TypedReducer<AnnouncementsState, SetPageIndex>(_setPageIndex).call,
   TypedReducer<AnnouncementsState, GetUserSuccessful>(_getUser).call,
-  TypedReducer<AnnouncementsState, AddAnnouncementSuccessful>(_addAnnouncementSuccessful).call,
 ]);
 
 AnnouncementsState _listAnnouncements(AnnouncementsState state, ListAnnouncementsSuccessful action) {
@@ -28,12 +27,6 @@ AnnouncementsState _getUser(AnnouncementsState state, GetUserSuccessful action) 
   return state.copyWith(
     announcementOwner: action.user,
   );
-}
-
-AnnouncementsState _addAnnouncementSuccessful(AnnouncementsState state, AddAnnouncementSuccessful action) {
-  state.announcements.add(action.announcement);
-
-  return state;
 }
 
 AnnouncementsState _listCategorySuccessful(AnnouncementsState state, ListCategorySuccessful action) {

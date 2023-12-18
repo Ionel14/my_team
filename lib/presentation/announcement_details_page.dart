@@ -17,20 +17,34 @@ class AnnouncementDetails extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Column(
               children: <Widget>[
-                CachedNetworkImage(
+                if (announcement.image.isNotEmpty)
+                  CachedNetworkImage(
                   imageUrl: announcement.image,
-                  fit: BoxFit.fitHeight,
-                  width: 200,
-                  height: 300,
-                ),
+                  fit: BoxFit.contain,
+                  )
+                else
+                  Center(child: Container(
+                    width: 250,
+                    height: 250,
+                    constraints: const BoxConstraints(
+                      minWidth: 50,
+                      minHeight: 50,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(
+                      Icons.image,
+                      size: 50,
+                      color: Colors.white,
+                    ),
+                  ),
+
+                  ),
+
                 Row(
                   children: <Widget>[
-                    // Expanded(
-                    //   child: CachedNetworkImage(
-                    //     imageUrl: announcement,
-                    //     fit: BoxFit.fill,
-                    //   ),
-                    // ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16.0),
@@ -38,6 +52,13 @@ class AnnouncementDetails extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 16.0),
+                              child: Text(
+                                announcement.title,
+                                style: const TextStyle(fontSize: 24),
+                              ),
+                            ),
                             const Text(
                               'Description:',
                               style: TextStyle(fontSize: 24),

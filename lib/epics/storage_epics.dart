@@ -22,9 +22,10 @@ class StorageEpics implements EpicClass<AppState>{
   Stream<dynamic> _storeAnnouncementImageStart(Stream<StoreAnnouncementImageStart> actions, EpicStore<AppState> store) {
     return actions.flatMap((StoreAnnouncementImageStart action) {
       return Stream<void>.value(null)
-        .asyncMap((_) => _api.storeImage(action.file, action.announcementId))
+        .asyncMap((_) => _api.storeImage(action.file, action.ownerId))
         .map((String imageUrl) => StoreAnnouncementImage.successful(imageUrl))
-        .onErrorReturnWith((Object error, StackTrace stackTrace) => StoreAnnouncementImage.error(error, stackTrace));
+        .onErrorReturnWith((Object error, StackTrace stackTrace) => StoreAnnouncementImage.error(error, stackTrace))
+        .doOnData(action.result);
     });
   }
 }

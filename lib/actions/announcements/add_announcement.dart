@@ -12,8 +12,7 @@ class AddAnnouncement with _$AddAnnouncement {
 
   @Implements<StopAction>()
   const factory AddAnnouncement.successful(
-    Announcement announcement, [
-    @Default(_kAddAnnouncementPendingId) String pendingId,
+      [@Default(_kAddAnnouncementPendingId) String pendingId,
   ]) = AddAnnouncementSuccessful;
 
   @Implements<StopAction>()

@@ -25,6 +25,7 @@ class _CreateAnnouncementPageState extends State<CreateAnnouncementPage> {
   late String _title;
   late String _description;
   late String _categoryId;
+  late String _userId;
 
   Future<void> getImage() async {
     final XFile? pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -33,6 +34,22 @@ class _CreateAnnouncementPageState extends State<CreateAnnouncementPage> {
       setState(() {
         _imageFile = File(pickedFile.path);
       });
+    }
+  }
+
+  void _storedFile(dynamic action) {
+
+    if (action is StoreAnnouncementImageSuccessful) {
+      StoreProvider.of<AppState>(context).dispatch(AddAnnouncement(announcement:
+      Announcement(
+          id: '',
+          title: _title,
+          description: _description,
+          image: action.imageUrl,
+          city: '$_countryValue, $_stateValue, $_cityValue',
+          categoryId: _categoryId,
+          userId: _userId)));
+      StoreProvider.of<AppState>(context).dispatch(const SetPageIndex(0));
     }
   }
 
@@ -220,49 +237,74 @@ class _CreateAnnouncementPageState extends State<CreateAnnouncementPage> {
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      if (_stateValue.isEmpty || _cityValue.isEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(
+                child: PendingContainer(builder: (BuildContext context, Set<String> pending) {
+                   return UserContainer(builder: (BuildContext context, AppUser? user) {
+
+                     if (pending.contains(StoreAnnouncementImage.pendingKey) || pending.contains(AddAnnouncement.pendingKey)) {
+                       return const Center(
+                         child: Image(image: AssetImage('assets/football.gif')),
+                       );
+                     }
+
+                     return ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          if (_stateValue.isEmpty || _cityValue.isEmpty) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text(
+                                  'You need to select your location',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ))
+                            );
+                          }
+                          else {
+                            _userId = user!.uid;
+
+                            if (_imageFile != null) {
+                              StoreProvider.of<AppState>(context).dispatch(
+                                  StoreAnnouncementImage(file: _imageFile!, ownerId: user.uid, result: _storedFile));
+                            }
+                            else {
+                              StoreProvider.of<AppState>(context).dispatch(AddAnnouncement(announcement:
+                              Announcement(id: '',
+                                  title: _title,
+                                  description: _description,
+                                  image: '',
+                                  city: '$_countryValue, $_stateValue, $_cityValue',
+                                  categoryId: _categoryId,
+                                  userId: _userId)));
+                              StoreProvider.of<AppState>(context).dispatch(const SetPageIndex(0));
+                            }
+                          }
+                        }
+                        else {
+                          ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text(
-                                'You need to select your location',
+                              'You need to complete all fields',
                               style: TextStyle(
                                 fontSize: 20,
                               ),
-                            ))
-                        );
-                    }
-                      else{
-                        
-                            StoreProvider.of<AppState>(context).dispatch(const SetPageIndex(0));
-                            //StoreProvider.of<AppState>(context).dispatch(const SetPageIndex(0));
-                      }
-                    }
-                    else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text(
-                              'You need to complete all fields',
-                            style: TextStyle(
-                              fontSize: 20,
-                            ),
-                          )),
-                      );
-                    }
-                  },
-                  style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateColor.resolveWith((Set<MaterialState> states) => Colors.purple),
-                    textStyle: MaterialStateTextStyle.resolveWith((Set<MaterialState> states) =>
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                            )),
+                          );
+                        }
+                      },
+                      style: ButtonStyle(
+                        backgroundColor:
+                        MaterialStateColor.resolveWith((Set<MaterialState> states) => Colors.purple),
+                        textStyle: MaterialStateTextStyle.resolveWith((Set<MaterialState> states) =>
+                        const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  child: const Text('Add'),
-                ),
+                      child: const Text('Add'),
+                    );
+                  });
+                }),
               ),
             ],
           ),

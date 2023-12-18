@@ -37,10 +37,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.green,
       appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Pictures',
-          ),
+        centerTitle: true,
+        title: const Text(
+          'Announcements',
         ),
         actions: <Widget>[
           IconButton(
@@ -107,10 +106,13 @@ class _HomePageState extends State<HomePage> {
                                 fit: StackFit.expand,
                                 children: <Widget>[
                                   GridTile(
-                                    child: CachedNetworkImage(
-                                      imageUrl: announcement.image,
-                                      fit: BoxFit.contain,
-                                    ),
+                                    child: announcement.image.isNotEmpty ?
+                                      CachedNetworkImage(
+                                        imageUrl: announcement.image,
+                                        fit: BoxFit.contain,
+                                      )
+                                        :
+                                      const Center(child: Text('No image')),
                                   ),
                                   Align(
                                     alignment: AlignmentDirectional.bottomEnd,
@@ -126,9 +128,8 @@ class _HomePageState extends State<HomePage> {
                                       child: ListTile(
                                         title: Text(
                                           '${announcement.title}\n${announcement.city}',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  fontSize: 30, fontWeight: FontWeight.w600, color: Colors.white)),
+                                          style: const TextStyle(
+                                                  fontSize: 30, fontWeight: FontWeight.w600, color: Colors.white),
                                         ),
                                         // trailing: CircleAvatar(
                                         //    backgroundImage: NetworkImage(),

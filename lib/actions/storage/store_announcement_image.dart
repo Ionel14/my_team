@@ -8,7 +8,8 @@ class StoreAnnouncementImage with _$StoreAnnouncementImage {
   @Implements<StartAction>()
   const factory StoreAnnouncementImage({
     required File file,
-    required String announcementId,
+    required String ownerId,
+    required ActionResult result,
     @Default(_kStoreAnnouncementImagePendingId) String pendingId,
   }) = StoreAnnouncementImageStart;
 

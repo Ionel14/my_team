@@ -19,7 +19,8 @@ mixin _$StoreAnnouncementImage {
   String get pendingId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)
         $default, {
     required TResult Function(String imageUrl, String pendingId) successful,
     required TResult Function(
@@ -29,7 +30,8 @@ mixin _$StoreAnnouncementImage {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(File file, String announcementId, String pendingId)?
+    TResult? Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult? Function(String imageUrl, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -38,7 +40,8 @@ mixin _$StoreAnnouncementImage {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)?
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult Function(String imageUrl, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -118,7 +121,7 @@ abstract class _$$StoreAnnouncementImageStartCopyWith<$Res>
       __$$StoreAnnouncementImageStartCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({File file, String announcementId, String pendingId});
+  $Res call({File file, String ownerId, ActionResult result, String pendingId});
 }
 
 /// @nodoc
@@ -135,7 +138,8 @@ class __$$StoreAnnouncementImageStartCopyWithImpl<$Res>
   @override
   $Res call({
     Object? file = null,
-    Object? announcementId = null,
+    Object? ownerId = null,
+    Object? result = null,
     Object? pendingId = null,
   }) {
     return _then(_$StoreAnnouncementImageStart(
@@ -143,10 +147,14 @@ class __$$StoreAnnouncementImageStartCopyWithImpl<$Res>
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
               as File,
-      announcementId: null == announcementId
-          ? _value.announcementId
-          : announcementId // ignore: cast_nullable_to_non_nullable
+      ownerId: null == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
               as String,
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as ActionResult,
       pendingId: null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
@@ -160,20 +168,23 @@ class __$$StoreAnnouncementImageStartCopyWithImpl<$Res>
 class _$StoreAnnouncementImageStart implements StoreAnnouncementImageStart {
   const _$StoreAnnouncementImageStart(
       {required this.file,
-      required this.announcementId,
+      required this.ownerId,
+      required this.result,
       this.pendingId = _kStoreAnnouncementImagePendingId});
 
   @override
   final File file;
   @override
-  final String announcementId;
+  final String ownerId;
+  @override
+  final ActionResult result;
   @override
   @JsonKey()
   final String pendingId;
 
   @override
   String toString() {
-    return 'StoreAnnouncementImage(file: $file, announcementId: $announcementId, pendingId: $pendingId)';
+    return 'StoreAnnouncementImage(file: $file, ownerId: $ownerId, result: $result, pendingId: $pendingId)';
   }
 
   @override
@@ -182,14 +193,15 @@ class _$StoreAnnouncementImageStart implements StoreAnnouncementImageStart {
         (other.runtimeType == runtimeType &&
             other is _$StoreAnnouncementImageStart &&
             (identical(other.file, file) || other.file == file) &&
-            (identical(other.announcementId, announcementId) ||
-                other.announcementId == announcementId) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.result, result) || other.result == result) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, file, announcementId, pendingId);
+  int get hashCode =>
+      Object.hash(runtimeType, file, ownerId, result, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -201,32 +213,35 @@ class _$StoreAnnouncementImageStart implements StoreAnnouncementImageStart {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)
         $default, {
     required TResult Function(String imageUrl, String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
   }) {
-    return $default(file, announcementId, pendingId);
+    return $default(file, ownerId, result, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(File file, String announcementId, String pendingId)?
+    TResult? Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult? Function(String imageUrl, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
-    return $default?.call(file, announcementId, pendingId);
+    return $default?.call(file, ownerId, result, pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)?
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult Function(String imageUrl, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -234,7 +249,7 @@ class _$StoreAnnouncementImageStart implements StoreAnnouncementImageStart {
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(file, announcementId, pendingId);
+      return $default(file, ownerId, result, pendingId);
     }
     return orElse();
   }
@@ -279,11 +294,13 @@ abstract class StoreAnnouncementImageStart
     implements StoreAnnouncementImage, StartAction {
   const factory StoreAnnouncementImageStart(
       {required final File file,
-      required final String announcementId,
+      required final String ownerId,
+      required final ActionResult result,
       final String pendingId}) = _$StoreAnnouncementImageStart;
 
   File get file;
-  String get announcementId;
+  String get ownerId;
+  ActionResult get result;
   @override
   String get pendingId;
   @override
@@ -376,7 +393,8 @@ class _$StoreAnnouncementImageSuccessful
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)
         $default, {
     required TResult Function(String imageUrl, String pendingId) successful,
     required TResult Function(
@@ -389,7 +407,8 @@ class _$StoreAnnouncementImageSuccessful
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(File file, String announcementId, String pendingId)?
+    TResult? Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult? Function(String imageUrl, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -401,7 +420,8 @@ class _$StoreAnnouncementImageSuccessful
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)?
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult Function(String imageUrl, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -553,7 +573,8 @@ class _$StoreAnnouncementImageError implements StoreAnnouncementImageError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)
         $default, {
     required TResult Function(String imageUrl, String pendingId) successful,
     required TResult Function(
@@ -566,7 +587,8 @@ class _$StoreAnnouncementImageError implements StoreAnnouncementImageError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(File file, String announcementId, String pendingId)?
+    TResult? Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult? Function(String imageUrl, String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -578,7 +600,8 @@ class _$StoreAnnouncementImageError implements StoreAnnouncementImageError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(File file, String announcementId, String pendingId)?
+    TResult Function(
+            File file, String ownerId, ActionResult result, String pendingId)?
         $default, {
     TResult Function(String imageUrl, String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
@@ -767,8 +790,7 @@ mixin _$AddAnnouncement {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId) $default, {
-    required TResult Function(Announcement announcement, String pendingId)
-        successful,
+    required TResult Function(String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -777,7 +799,7 @@ mixin _$AddAnnouncement {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(Announcement announcement, String pendingId)? $default, {
-    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) =>
@@ -785,7 +807,7 @@ mixin _$AddAnnouncement {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId)? $default, {
-    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -943,8 +965,7 @@ class _$AddAnnouncementStart implements AddAnnouncementStart {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId) $default, {
-    required TResult Function(Announcement announcement, String pendingId)
-        successful,
+    required TResult Function(String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -956,7 +977,7 @@ class _$AddAnnouncementStart implements AddAnnouncementStart {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(Announcement announcement, String pendingId)? $default, {
-    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -967,7 +988,7 @@ class _$AddAnnouncementStart implements AddAnnouncementStart {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId)? $default, {
-    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
@@ -1036,9 +1057,7 @@ abstract class _$$AddAnnouncementSuccessfulCopyWith<$Res>
       __$$AddAnnouncementSuccessfulCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Announcement announcement, String pendingId});
-
-  $AnnouncementCopyWith<$Res> get announcement;
+  $Res call({String pendingId});
 }
 
 /// @nodoc
@@ -1052,45 +1071,30 @@ class __$$AddAnnouncementSuccessfulCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? announcement = null,
     Object? pendingId = null,
   }) {
     return _then(_$AddAnnouncementSuccessful(
-      null == announcement
-          ? _value.announcement
-          : announcement // ignore: cast_nullable_to_non_nullable
-              as Announcement,
       null == pendingId
           ? _value.pendingId
           : pendingId // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AnnouncementCopyWith<$Res> get announcement {
-    return $AnnouncementCopyWith<$Res>(_value.announcement, (value) {
-      return _then(_value.copyWith(announcement: value));
-    });
-  }
 }
 
 /// @nodoc
 
 class _$AddAnnouncementSuccessful implements AddAnnouncementSuccessful {
-  const _$AddAnnouncementSuccessful(this.announcement,
+  const _$AddAnnouncementSuccessful(
       [this.pendingId = _kAddAnnouncementPendingId]);
 
-  @override
-  final Announcement announcement;
   @override
   @JsonKey()
   final String pendingId;
 
   @override
   String toString() {
-    return 'AddAnnouncement.successful(announcement: $announcement, pendingId: $pendingId)';
+    return 'AddAnnouncement.successful(pendingId: $pendingId)';
   }
 
   @override
@@ -1098,14 +1102,12 @@ class _$AddAnnouncementSuccessful implements AddAnnouncementSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddAnnouncementSuccessful &&
-            (identical(other.announcement, announcement) ||
-                other.announcement == announcement) &&
             (identical(other.pendingId, pendingId) ||
                 other.pendingId == pendingId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, announcement, pendingId);
+  int get hashCode => Object.hash(runtimeType, pendingId);
 
   @JsonKey(ignore: true)
   @override
@@ -1118,37 +1120,36 @@ class _$AddAnnouncementSuccessful implements AddAnnouncementSuccessful {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId) $default, {
-    required TResult Function(Announcement announcement, String pendingId)
-        successful,
+    required TResult Function(String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
   }) {
-    return successful(announcement, pendingId);
+    return successful(pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(Announcement announcement, String pendingId)? $default, {
-    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
-    return successful?.call(announcement, pendingId);
+    return successful?.call(pendingId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId)? $default, {
-    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
   }) {
     if (successful != null) {
-      return successful(announcement, pendingId);
+      return successful(pendingId);
     }
     return orElse();
   }
@@ -1190,10 +1191,9 @@ class _$AddAnnouncementSuccessful implements AddAnnouncementSuccessful {
 
 abstract class AddAnnouncementSuccessful
     implements AddAnnouncement, StopAction {
-  const factory AddAnnouncementSuccessful(final Announcement announcement,
-      [final String pendingId]) = _$AddAnnouncementSuccessful;
+  const factory AddAnnouncementSuccessful([final String pendingId]) =
+      _$AddAnnouncementSuccessful;
 
-  Announcement get announcement;
   @override
   String get pendingId;
   @override
@@ -1288,8 +1288,7 @@ class _$AddAnnouncementError implements AddAnnouncementError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId) $default, {
-    required TResult Function(Announcement announcement, String pendingId)
-        successful,
+    required TResult Function(String pendingId) successful,
     required TResult Function(
             Object error, StackTrace stackTrace, String pendingId)
         error,
@@ -1301,7 +1300,7 @@ class _$AddAnnouncementError implements AddAnnouncementError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(Announcement announcement, String pendingId)? $default, {
-    TResult? Function(Announcement announcement, String pendingId)? successful,
+    TResult? Function(String pendingId)? successful,
     TResult? Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
   }) {
@@ -1312,7 +1311,7 @@ class _$AddAnnouncementError implements AddAnnouncementError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Announcement announcement, String pendingId)? $default, {
-    TResult Function(Announcement announcement, String pendingId)? successful,
+    TResult Function(String pendingId)? successful,
     TResult Function(Object error, StackTrace stackTrace, String pendingId)?
         error,
     required TResult orElse(),
